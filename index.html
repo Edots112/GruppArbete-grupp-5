@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="icon" href="demo_icon.gif" type="image/gif" sizes="16x16">
+    <link rel="icon" href="/img/Icon.png" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="style.css">
 </head>
 <header>
@@ -13,11 +13,11 @@
     <div class="container-navbar">
     <ul class="list-navbar">
         <li><a href="#">Hem</a></li>
-        <li><a href="#">Om oss</a></li>
+        <li><a href="#aboutus">Om oss</a></li>
         <li><a href="#">Kunder</a></li>
         <li><a href="#">Kontakta Oss</a></li>
     </ul>
-    <h2 class="navbar-heading">Synergy Systems</h2>
+    <h2 class="navbar heading"><span class="navbar-span">S</span>ynergy<span class="navbar-span">S</span>ystems</h2>
     <button id="loginBtn" class="login-btn">Logga in</button>
     </div>
 </nav>
@@ -25,10 +25,10 @@
 </header>
 <hr>
 
-<section class="welcome">
+<section class="welcome" id="welcome">
     <div class="welcome-text">
-        <h1>Välkommen till Synergy Systems</h1>
-        <h2>You've come to the right place</h2>
+        <h1 class="welcome-heading">Välkommen till <br> <span class="navbar-span">S</span>ynergy <span class="navbar-span">S</span>ystems</h1>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, tempore laudantium dolor, magni nihil rerum maxime, sed praesentium natus quibusdam odio quam iure consequatur modi veniam voluptatibus itaque. Consequuntur, atque?</h2>
     </div>
 
     <div class="welcome-img">
@@ -36,9 +36,9 @@
     </div>
 </section>
 
-<section class="container-aboutus">
+<section class="container-aboutus" id="aboutus">
     <div class="aboutus-text">
-        <h1 class="aboutus-heading">Om oss</h1>
+        <h1 class="aboutus heading">Om oss</h1>
         <p class="aboutus-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
         
@@ -57,40 +57,40 @@
     </div>
 </section>
 
-<section class="container-kunder">
-    <h2>Kunder</h2>
+<section class="costumer-section">
+    <h2 class="heading">Kunder</h2>
     <hr>
-    <div class="container">
-        <div class="costumer-one">
-            <img src="" alt="">
+    <div class="container-costumers">
+        <div class="containerblock costumer-one">
+            <img src="/img/brf 1.jpg" alt="">
             <h3>Brf Lågan</h3>
-            <p>lorem hasdjkasdhasjdhj ajsdh  asjdhjashd e asdja sdjsad </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias consequatur neque, reprehenderit numquam harum obcaecati ut dignissimos et, reiciendis nemo perferendis voluptas eius illo ducimus voluptate? Provident assumenda illum natus?</p>
         </div>
-        <div class="costumer-two">
-            <img src="" alt="">
+        <div class="containerblock costumer-two">
+            <img src="/img/brf 2.jpg" alt="">
             <h3>Brf Saturnus</h3>
-            <p>lorem hasdjkasdhasjdhj ajsdh  asjdhjashd e asdja sdjsad </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum magni vitae neque enim, error ipsam minus iure sit perferendis veritatis dicta? Animi velit aspernatur natus harum, quam accusamus adipisci fugit.</p>
         </div>
-        <div class="costumer-three">
-            <img src="" alt="">
+        <div class="containerblock costumer-three">
+            <img src="/img/brf 3.jpg" alt="">
             <h3>Brf Kogatan</h3>
-            <p>lorem hasdjkasdhasjdhj ajsdh  asjdhjashd e asdja sdjsad </p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem impedit iusto fugiat maiores dolores reiciendis sequi. Aspernatur vitae magni sunt nisi nostrum. Natus tenetur tempore iste voluptatibus, eius soluta rem!</p>
         </div>
     </div>
     
     
 </section>
 <section class="container-contact">
-    <h2 class="contact-heading">Kontakta oss</h2>
+    <h2 class="heading">Kontakta oss</h2>
     <hr>
     <div class="contact-form">
         <form action="">
-            <label for="name">Namn</label>
+            <label for="name">Namn:</label>
             <input type="text" name="name" id="name" placeholder="Namn">
-            <label for="email">E-post</label>
+            <label for="email">E-post:</label>
             <input type="email" name="email" id="email" placeholder="E-post">
-            <label for="message">Meddelande</label>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <label for="message">Meddelande:</label>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Skriv gärna ett meddelande til oss..."></textarea>
             <button class="submit-btn">Skicka</button>
         </form>
 </section>
