@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+}
+
+footer{
+    background-position: left;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color: rgb(64,64,64);
+    opacity: 0.8;
+    text-align: center;
+}
+
+/* //navbar */
+.container-navbar {
+    min-height: 5vh;
+    width: 100%;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    backdrop-filter: blur(10rem);
+}
+
+.list-navbar li {
+    font-size: 25px;
+   display: inline-block;
+}
+
+.list-navbar li a {
+    width: 200px;
+    height: 50px;
+    text-decoration: none;
+    color: rgb(14, 12, 12);
+    font-weight: 500;
+    padding: 10px 10px;
+    transition: 1s;
+}
+
+.list-navbar li a:hover {
+    /* background-color: rgba(121, 116, 116, 0.6);
+    border-radius: 10px; */
+    text-decoration: underline;
+}
+
+
+
+
+
+
+.heading{
+    font-size: 55px;
+    font-weight: 500;
+    color: rgb(73, 71, 71);
+    text-align: center;
+    padding: 15px 15px;
+    letter-spacing: -6px;
+}
+
+
+
+.navbar-span{
+    color: rgb(44, 39, 39);
+    font-size: 70px;
+    font-weight: 700;
+    letter-spacing: -10px;
+}
+.login-btn{
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.login-btn:hover{
+   scale: 1.05;
+}
+
+
+/* //navbar */
+
+
+
+
+/* welcome page */
+.welcome{
+    background-image: url(/img/Namnlös\ design.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 95vh;
+    width: 100%;
+    
+}
+
+.welcome-text {
+    padding: 25px 25px;
+    width: 100%;
+    margin-left: 10rem;
+}
+
+.welcome-text h1{
+    font-size: 5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.welcome-text .navbar-span{
+    color: rgb(44, 39, 39);
+    font-size: 6rem;
+    font-weight: 700;
+}
+.welcome-text h2 {
+    margin: 10px;
+    width:30%;
+    font-style: italic;
+    font-weight: 500;
+    
+}
+
+.welcome-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+/* about us */
+.aboutus-text h1{
+    text-align: center;
+}
+
+.aboutus-p p{
+    margin-top: 40px;
+}
+
+.aboutus-imgs img{
+    border-radius: 50%;
+    margin-top: 80px;
+}
+
+.aboutus-upper {
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: center;
+}
+
+.aboutus-lower {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* Costumers */
+.costumer-section{
+    position: relative;
+    min-width: 100%;
+    height: 100vh;
+    background-color: rgb(64,64,64, 0.5);
+    backdrop-filter: blur(10rem);
+}
+
+.container-costumers{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 20px;    
+}
+
+.containerblock{
+    /* border: 1px solid black; */
+    height: 500px;
+    width: 500px;
+}
+
+
+
+.containerblock img{
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.containerblock h3{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.containerblock p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* //Costumers */
+
+/* contact form */
+.container-contact{
+    height: 100vh;
+    background-color: rgb(44, 39, 39, 0.6);
+   
+
+
+
+}
+.contact-form{
+    align-items: center;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contact-form form{
+    margin-top: 25px;
+    width: 500px;
+    background-color: rgb(64,64,64, 0.5);
+    backdrop-filter: blur(10rem);
+    border-radius: 10px;
+    padding: 20px 20px;
+}
+
+.contact-form label{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.contact-form input{
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+}
+
+.contact-form textarea{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+.contact-form button{
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    
+}
+
+.contact-form button:hover{
+    scale: 1.05;
+}
