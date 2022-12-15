@@ -62,7 +62,7 @@ document.getElementById("errorMsgLogin").innerHTML = "Fel anv√§ndarnamn eller l√
 function removeBorder(){
     document.getElementById("loginTextInput").style.border = "2px solid black";
     document.getElementById("passwordInput").style.border = "2px solid black";
-    document.getElementById("signupForm").style.border = "2px solid black";
+    document.getElementById("loginForm").style.border = "2px solid black";
     document.getElementById("loginBtn2").style.border = "2px solid black";
     document.getElementById("errorMsgLogin").innerHTML = "";
 }
@@ -90,4 +90,33 @@ document.getElementById("loginBtn2").addEventListener("click", function(event) {
    loginUser(event);  
 
 } );
+
+
+
+
+function scrollUp() {
+    window.scrollBy(0, -window.innerHeight);
+}
+
+
+
+document.getElementById("scrollUp").addEventListener("click", scrollUp);
+
+
+
+
+
+function scrollDown() {
+    window.scrollBy(0, window.innerHeight);
+
+}
+
+
+
+//eventlistener for the scroll down button
+
+document.getElementById("scrollDown").addEventListener("click", scrollDown);
+
+
+
 
