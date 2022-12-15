@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="icon" href="/img/Icon.png" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="style.css">
+    <script src="/userindex.js" defer></script>
 </head>
 <header>
 <nav>
@@ -14,11 +15,11 @@
     <ul class="list-navbar">
         <li><a href="#">Hem</a></li>
         <li><a href="#aboutus">Om oss</a></li>
-        <li><a href="#">Kunder</a></li>
-        <li><a href="#">Kontakta Oss</a></li>
+        <li><a href="#costmers">Kunder</a></li>
+        <li><a href="#contact">Kontakta Oss</a></li>
     </ul>
     <h2 class="navbar heading"><span class="navbar-span">S</span>ynergy<span class="navbar-span">S</span>ystems</h2>
-    <button id="loginBtn" class="login-btn">Logga in</button>
+    <button  type="submit" id="loginBtn" class="login-btn">Logga in</button>
     </div>
 </nav>
 
@@ -39,25 +40,81 @@
 <section class="container-aboutus" id="aboutus">
     <div class="aboutus-text">
         <h1 class="aboutus heading">Om oss</h1>
-        <p class="aboutus-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <hr>
+        <!-- <p class="aboutus-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
     </div>
         
-    <div class="aboutus-imgs">
+    <div class="aboutus-containerblock">
         <div class="aboutus-upper">
-            <img class="Nicolai" alt="Nicolai" src="https://media.istockphoto.com/id/1395666412/vector/human-bust-silhouette-avatar-bust-shape-parallel-lines-human-chakra-aura-radiation-of-energy.jpg?s=612x612&w=0&k=20&c=s5W48bQuo1ScQE9NcqxNL09NrPQMucH9YxpuIyNDsdQ=" width="200" height="200">
-            <img class="Fredrik" alt="Fredrik" src="https://media.istockphoto.com/id/1395666412/vector/human-bust-silhouette-avatar-bust-shape-parallel-lines-human-chakra-aura-radiation-of-energy.jpg?s=612x612&w=0&k=20&c=s5W48bQuo1ScQE9NcqxNL09NrPQMucH9YxpuIyNDsdQ=" width="200" height="200">
-            <img class="Anton" alt="Anton" src="https://media.istockphoto.com/id/1395666412/vector/human-bust-silhouette-avatar-bust-shape-parallel-lines-human-chakra-aura-radiation-of-energy.jpg?s=612x612&w=0&k=20&c=s5W48bQuo1ScQE9NcqxNL09NrPQMucH9YxpuIyNDsdQ=" width="200" height="200">
+            <div class="aboutus-user">
+            <img class="aboutus-img" alt="Nicolai" src="https://media.istockphoto.com/id/1395666412/vector/human-bust-silhouette-avatar-bust-shape-parallel-lines-human-chakra-aura-radiation-of-energy.jpg?s=612x612&w=0&k=20&c=s5W48bQuo1ScQE9NcqxNL09NrPQMucH9YxpuIyNDsdQ=" width="200" height="200">
+            <h3>Nicolai</h3>
+            <p>Blockchain Developer</p>
+            <div class="aboutus-socials">
+                <a href="" target="_blank"><img src="img/icons/mail.png" alt="facebook" ></a>
+                <a href="https://www.instagram.com/" target="_blank"><img src="img/icons/linkedin.png"alt="instagram" ></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="img/icons/twitter.png" alt="linkedin" ></a>
+            </div>
+        </div>
+        <div class="aboutus-user">
+            <img class="aboutus-img" alt="Fredrik" src="https://media.istockphoto.com/id/1395666412/vector/human-bust-silhouette-avatar-bust-shape-parallel-lines-human-chakra-aura-radiation-of-energy.jpg?s=612x612&w=0&k=20&c=s5W48bQuo1ScQE9NcqxNL09NrPQMucH9YxpuIyNDsdQ=" width="200" height="200">
+            <h3>Fredrik</h3>
+            <p>Blockchain Developer</p>
+            <div class="aboutus-socials">
+                <a href="" target="_blank"><img src="img/icons/mail.png" alt="facebook" ></a>
+                <a href="https://www.instagram.com/" target="_blank"><img src="img/icons/linkedin.png"alt="instagram" ></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="img/icons/twitter.png" alt="linkedin" ></a>
+            </div>
+        </div> 
+        <div class="aboutus-user">
+            <img class="aboutus-img" alt="Anton" src="https://media.istockphoto.com/id/1395666412/vector/human-bust-silhouette-avatar-bust-shape-parallel-lines-human-chakra-aura-radiation-of-energy.jpg?s=612x612&w=0&k=20&c=s5W48bQuo1ScQE9NcqxNL09NrPQMucH9YxpuIyNDsdQ=" width="200" height="200">
+            <h3>Anton</h3>
+            <p>Blockchain Developer</p>
+            <div class="aboutus-socials">
+                <a href="" target="_blank"><img src="img/icons/mail.png" alt="facebook" ></a>
+                <a href="https://www.instagram.com/" target="_blank"><img src="img/icons/linkedin.png"alt="instagram" ></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="img/icons/twitter.png" alt="linkedin" ></a>
+            </div>
+            
+        </div>
         </div>
         
         <div class="aboutus-lower">
-            <img class="Daniel" alt="Daniel" src="https://media.istockphoto.com/id/1395666412/vector/human-bust-silhouette-avatar-bust-shape-parallel-lines-human-chakra-aura-radiation-of-energy.jpg?s=612x612&w=0&k=20&c=s5W48bQuo1ScQE9NcqxNL09NrPQMucH9YxpuIyNDsdQ=" width="200" height="200">
-            <img class="Zakariya" alt="Zakariya" src="https://media.istockphoto.com/id/1395666412/vector/human-bust-silhouette-avatar-bust-shape-parallel-lines-human-chakra-aura-radiation-of-energy.jpg?s=612x612&w=0&k=20&c=s5W48bQuo1ScQE9NcqxNL09NrPQMucH9YxpuIyNDsdQ=" width="200" height="200">
-            <img class="Erik" alt="Erik" src="https://media.istockphoto.com/id/1395666412/vector/human-bust-silhouette-avatar-bust-shape-parallel-lines-human-chakra-aura-radiation-of-energy.jpg?s=612x612&w=0&k=20&c=s5W48bQuo1ScQE9NcqxNL09NrPQMucH9YxpuIyNDsdQ=" width="200" height="200">
+            <div class="aboutus-user">
+            <img class="aboutus-img" alt="Daniel" src="https://media.istockphoto.com/id/1395666412/vector/human-bust-silhouette-avatar-bust-shape-parallel-lines-human-chakra-aura-radiation-of-energy.jpg?s=612x612&w=0&k=20&c=s5W48bQuo1ScQE9NcqxNL09NrPQMucH9YxpuIyNDsdQ=" width="200" height="200">
+            <h3>Daniel</h3>
+            <p>Blockchain Developer</p>
+            <div class="aboutus-socials">
+                <a href="" target="_blank"><img src="img/icons/mail.png" alt="facebook" ></a>
+                <a href="https://www.instagram.com/" target="_blank"><img src="img/icons/linkedin.png"alt="instagram" ></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="img/icons/twitter.png" alt="linkedin" ></a>
+            </div>
+        </div>
+        <div class="aboutus-user">
+            <img class="aboutus-img" alt="Zakariya" src="https://media.istockphoto.com/id/1395666412/vector/human-bust-silhouette-avatar-bust-shape-parallel-lines-human-chakra-aura-radiation-of-energy.jpg?s=612x612&w=0&k=20&c=s5W48bQuo1ScQE9NcqxNL09NrPQMucH9YxpuIyNDsdQ=" width="200" height="200">
+            <h3>Zakariya</h3>
+            <p>Blockchain Developer</p>
+            <div class="aboutus-socials">
+                <a href="" target="_blank"><img src="img/icons/mail.png" alt="facebook" ></a>
+                <a href="https://www.instagram.com/" target="_blank"><img src="img/icons/linkedin.png"alt="instagram" ></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="img/icons/twitter.png" alt="linkedin" ></a>
+            </div>
+        </div>
+        <div class="aboutus-user">
+            <img class="aboutus-img" alt="Erik" src="https://media.istockphoto.com/id/1395666412/vector/human-bust-silhouette-avatar-bust-shape-parallel-lines-human-chakra-aura-radiation-of-energy.jpg?s=612x612&w=0&k=20&c=s5W48bQuo1ScQE9NcqxNL09NrPQMucH9YxpuIyNDsdQ=" width="200" height="200">
+            <h3>Erik</h3>
+            <p>Blockchain Developer</p>
+            <div class="aboutus-socials">
+                <a href="" target="_blank"><img src="img/icons/mail.png" alt="facebook" ></a>
+                <a href="https://www.instagram.com/" target="_blank"><img src="img/icons/linkedin.png"alt="instagram" ></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="img/icons/twitter.png" alt="linkedin" ></a>
+            </div>
+        </div>
         </div>
     </div>
 </section>
 
-<section class="costumer-section">
+<section class="costumer-section" id="costmers">
     <h2 class="heading">Kunder</h2>
     <hr>
     <div class="container-costumers">
@@ -80,7 +137,7 @@
     
     
 </section>
-<section class="container-contact">
+<section class="container-contact" id="contact">
     <h2 class="heading">Kontakta oss</h2>
     <hr>
     <div class="contact-form">
@@ -94,6 +151,30 @@
             <button class="submit-btn">Skicka</button>
         </form>
 </section>
+
+<div class="login-container">
+    
+    <form action="userpage.html" id="loginForm" >
+        
+        <div class="close-btn">&times;</div>
+        <h3>Välkommen</h3>
+        <!-- <label for="text-input">Username</label> -->
+        <input
+            type="text"
+            name="text-input"
+            id="loginTextInput"
+            placeholder="Användarnamn" 
+            focus/>
+        <input
+            type="password"
+            name="password-input"
+            id="passwordInput"
+            placeholder="Lösenord" />
+            <p id="errorMsgLogin"></p>
+        <button type="submit" id="loginBtn2">Logga in</button>
+    </div>
+
+    <!-- <div id="scrollTop" class="scroll-top">Top</div> -->
 <footer class="footer">
     <img src=""  alt=""  id="">
     <p>Nyhetsbrev<br>prenumerera på vårt nyhetsbrev</p>
