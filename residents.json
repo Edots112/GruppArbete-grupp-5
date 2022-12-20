@@ -1,0 +1,123 @@
+[
+{
+    "first_name":"Jamie",
+    "last_name":"Gribbon",
+    "username":"jgribbon0",
+    "password":"TIVR6NcES5",
+    "email":"jgribbon0@amazon.de",
+    "phone":"256-974-9597",
+    "apartment":"01a1",
+    "admin":true
+},
+
+{
+    "first_name":"Shannon",
+    "last_name":"Causby",
+    "username":"scausby1",
+    "password":"c1TEVo5",
+    "email":"scausby1@spotify.com",
+    "phone":"288-401-3089",
+    "apartment":"01a2",
+    "admin":false
+},
+{
+    "first_name":"Billy",
+    "last_name":"Whall",
+    "username":"bwhall2",
+    "password":"2ES8DJ9S7D",
+    "email":"bwhall2@economist.com",
+    "phone":"587-376-8123",
+    "apartment":"#01b1",
+    "admin":false
+},
+{
+    "first_name":"Lauryn",
+    "last_name":"Oulett",
+    "username":"loulett3",
+    "password":"zpi9BCg6o",
+    "email":"loulett3@utexas.edu",
+    "phone":"177-609-8402",
+    "apartment":"01b2",
+    "admin":false
+},
+{
+    "first_name":"Sharleen",
+    "last_name":"Ghiriardelli",
+    "username":"sghiriardelli4",
+    "password":"Rzn3TBPlalt3",
+    "email":"sghiriardelli4@oaic.gov.au",
+    "phone":"330-359-8258",
+    "apartment":"02a1",
+    "admin":false
+},
+{
+    "first_name":"Alfie",
+    "last_name":"Harrie",
+    "username":"aharrie5",
+    "password":"H5MarwrvsYBy",
+    "email":"aharrie5@umich.edu",
+    "phone":"113-146-0760",
+    "apartment":"#02a2",
+    "admin":false
+},
+{
+    "first_name":"Marge",
+    "last_name":"Muino",
+    "username":"mmuino6",
+    "password":"Gy7Md4j8",
+    "email":"mmuino6@example.com",
+    "phone":"177-105-5927",
+    "apartment":"02b1",
+    "admin":false
+},
+{
+    "first_name":"Isadore",
+    "last_name":"Wiltshire",
+    "username":"iwiltshire7",
+    "password":"WKS8P5i",
+    "email":"iwiltshire7@homestead.com",
+    "phone":"375-417-9531",
+    "apartment":"02b2",
+    "admin":false
+},
+{
+    "first_name":"Eddi",
+    "last_name":"Satyford",
+    "username":"esatyford8",
+    "password":"AfHGTRz8I",
+    "email":"esatyford8@ucsd.edu",
+    "phone":"551-191-6659",
+    "apartment":"03a1",
+    "admin":false
+},
+{
+    "first_name":"Walt",
+    "last_name":"Greystoke",
+    "username":"wgreystoke9",
+    "password":"z8hTv9CnsCf",
+    "email":"wgreystoke9@cisco.com",
+    "phone":"587-211-3778",
+    "apartment":"03a2",
+    "admin":false
+},
+{
+    "first_name":"Obed",
+    "last_name":"Moresby",
+    "username":"omoresbya",
+    "password":"DUpGXG3",
+    "email":"omoresbya@engadget.com",
+    "phone":"462-963-9992",
+    "apartment":"03b1",
+    "admin":false
+},
+{
+    "first_name":"Jeannette",
+    "last_name":"Skahill",
+    "username":"jskahillb",
+    "password":"Pwqa1VNGIZ",
+    "email":"jskahillb@parallels.com",
+    "phone":"607-614-9902",
+    "apartment":"03b2",
+    "admin":false
+    }
+]
