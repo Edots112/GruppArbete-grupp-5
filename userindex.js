@@ -1,23 +1,28 @@
 
+function loginUser (event) {
+    event.preventDefault();
 
-const users = [{ login: "admin", password: "admin" }];
+    fetch("residents.json")
+    .then((response) => response.json())
+    .then((data) => checkUser(data));    
 
-function loginUser(event) {
-	event.preventDefault();
-	const loginInput = document.getElementById("loginTextInput").value;
-	const passwordInput = document.getElementById("passwordInput").value;
+    function checkUser(user) {
+        const loginInput = document.getElementById("loginTextInput").value;
+        const passwordInput = document.getElementById("passwordInput").value;
 
-	const userFound = users.find(function (user) {
-		return user.login === loginInput && user.password === passwordInput;
-	});
-	if (userFound) {
-		document.querySelector(".login-container").style.display = "none";
-		window.location.href = "/userpage.html";
-		removeBorder();
-		storeUserInput();
-	} else {
-		errorMsg();
-	}
+        for (userInlog in user) {
+            let userlogin = user[userInlog].username;              
+            let userPassword = user[userInlog].password;
+
+            if (userlogin === loginInput && userPassword === passwordInput) {
+                storeUserInput();
+                window.location.href = "userpage.html";
+                break;
+            } else {
+                errorMsg();
+            }
+        }
+    }
 }
 
 function errorMsg() {
