@@ -8,7 +8,7 @@
     <link rel="icon" href="/img/Icon.png" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <script src="/userindex.js" defer></script>
+    <script src="/app.js" defer type="module"></script>
 </head>
 <header>
 <nav>
@@ -19,8 +19,7 @@
         <li><a href="#costmers">Kunder</a></li>
         <li><a href="#contact">Kontakta Oss</a></li>
     </ul>
-    <h2 class="navbar heading"><span class="navbar-span-1">S</span>ynergy<span class="navbar-span-2">S</span>ystems</h2>
-    <button  type="submit" id="loginBtn" class="login-btn">Logga in</button>
+    <h2 class="navbar heading"><span class="navbar-span-1">S</span>ynergy<span class="navbar-span-1">S</span>ystems</h2>
     </div>
 </nav>
 
@@ -32,22 +31,16 @@
         <h1 class="welcome-heading">Välkommen till <br> <span class="navbar-span">S</span>ynergy <span class="navbar-span">S</span>ystems</h1>
         <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, tempore laudantium dolor, magni nihil rerum maxime, sed praesentium natus quibusdam odio quam iure consequatur modi veniam voluptatibus itaque. Consequuntur, atque?</h2>
     </div>
-
-   <!---<div class="welcome-img">
-        <img src="https://cdn.dribbble.com/users/2536313/screenshots/14925261/media/bb448bbf83a1cacc28e82b168b96418f.png?compress=1&resize=400x300">
-    </div>
     <div class="scroll-container">
     <a id="scrollUp" class="scroll up"></a>
     <a id="scrollDown" class="scroll down"></a>
-</div>--->
-<!-- <button class="" id="translateBtn">Läs mer</button> -->
+</div>
 </section>
 
 <section class="container-aboutus" id="aboutus">
     <div class="aboutus-text">
         <h1 class="aboutus heading">Om oss</h1>
         <hr>
-        <!-- <p class="aboutus-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
     </div>
         
     <div class="aboutus-containerblock">
@@ -125,7 +118,7 @@
     <hr>
     <div class="container-costumers">
         <div class="containerblock costumer-one">
-            <img src="/img/brf 1.jpg" alt="">
+            <a href="/userpage.html"><img src="/img/brf 1.jpg" alt="" id="userpageLoad"></a>
             <h3>Brf Lågan</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias consequatur neque, reprehenderit numquam harum obcaecati ut dignissimos et, reiciendis nemo perferendis voluptas eius illo ducimus voluptate? Provident assumenda illum natus?</p>
         </div>
@@ -164,7 +157,6 @@
         
         <div class="close-btn">&times;</div>
         <h3>Välkommen</h3>
-        <!-- <label for="text-input">Username</label> -->
         <input
             type="text"
             name="text-input"
@@ -179,8 +171,6 @@
             <p id="errorMsgLogin"></p>
         <button type="submit" id="loginBtn2">Logga in</button>
     </div>
-
-    <!-- <div id="scrollTop" class="scroll-top">Top</div> -->
     <footer class="footer">
         <div class="container">
             <div class="row">
