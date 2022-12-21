@@ -12,8 +12,22 @@ const createBtn = document.getElementById("createBtn");
 const desc = document.getElementById("desc");
 const select = document.getElementById("options");
 
-// SKAPA VÅR KEDJA
+
 let timeSheet = new Sheet();
+
+let chain = localStorage.getItem("timeSheet");
+
+if (chain) {
+    timeSheet.timeSheet = JSON.parse(chain);
+} else {
+    console.log("No one is logged in.");
+}
+
+printTimes();
+
+
+// SKAPA VÅR KEDJA
+
 
 validateBtn.addEventListener("click", () => {
     console.log("Börjar validering");
