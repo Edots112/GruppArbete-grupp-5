@@ -7,6 +7,7 @@
     <title>Admin</title>
     <link rel="icon" href="/img/Icon.png" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="style.css">
+    <script src="adminScroll.js" defer type="module"></script>
 </head>
 
 <body>
@@ -44,22 +45,30 @@
     <section class="inbox">
         <article>
             <h1>Inbox</h1><br>
-            <p class="inboxText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="inboxText" id="inboxText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="btnContainer">
+                <button class="prev-button" id="prevInboxBtn">Förra</button>
+                <button class="next-button" id="nextInboxBtn">Nästa</button>
+            </div>
         </article>
     </section>
 
     <section class="ongoingVotes">
         <article>
             <h1>Pågående omröstningar</h1><br>
-            <p class="ongoingOne">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br>
+            <p class="ongoingOne" id="ongoingText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br>
             <div class="removeBtnContainer">
                 <button id="removeBtn1" class="removeBtn1">Avsluta omröstning</button>
             </div>
-            <h2><br></h2>
+            <div class="btnContainer">
+                <button class="prev-button" id="prevOngBtn">Förra</button>
+                <button class="next-button" id="nextOngBtn">Nästa</button>
+            </div>
+            <!--<h2><br></h2>
             <p class="ongoingTwo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br>
             <div class="removeBtnContainer">
                 <button id="removeBtn2" class="removeBtn2">Avsluta omörstning</button>
-            </div>
+            </div>-->
         </article>
     </section>
 </main>

@@ -21,6 +21,7 @@
 			src="/app.js"
 			defer
 			type="module"></script>
+		<script src="dashboard.js" defer type="module"></script>
 	</head>
 
 	<body>
@@ -74,13 +75,12 @@
 					<div class="date" id="dateTime">datum</div>
 					<p
 						class="newsOne"
-						id="newsOne"></p>
+						id="newsfeed"></p>
 					<br />
-					<button
-						type="submit"
-						id="showCase">
-						Scroll
-					</button>
+					<div class="btnContainer">
+						<button class="prev-button" id="prevNewsBtn">Förra</button>
+						<button class="next-button" id="nextNewsBtn">Nästa</button>
+					</div>
 				</article>
 			</section>
 
@@ -108,6 +108,10 @@
 							class="noBtn1">
 							Nej
 						</button>
+					</div>
+					<div class="btnContainer">
+						<button class="prev-button" id="prevVoteBtn">Förra</button>
+						<button class="next-button" id="nextVoteBtn">Nästa</button>
 					</div>
 				</article>
 			</section>
@@ -152,6 +156,10 @@
 							class="noBtn2">
 							Nej
 						</button>
+					</div>
+					<div class="btnContainer">
+						<button class="prev-button" id="prevAttendBtn">Förra</button>
+						<button class="next-button" id="nextAttendBtn">Nästa</button>
 					</div>
 				</article>
 			</section>
