@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Dashboard</title>
+		<link
+			rel="icon"
+			href="/img/Icon.png"
+			type="image/gif"
+			sizes="16x16" />
+		<link
+			rel="stylesheet"
+			href="style.css" />
+		<script
+			src="/app.js"
+			defer
+			type="module"></script>
+		<script src="dashboard.js" defer type="module"></script>
+	</head>
+
+	<body>
+		<header>
+			<nav>
+				<div class="container-navbar nav-userpage nav-dashboard">
+					<ul class="list-navbar">
+						<li id><a>Hem</a></li>
+                        <li id="User"><a id="adminBtn">Admin</a></li>
+					</ul>
+					<div class="weatherContainer">
+						<div class="weather-showcase">
+							<h4 id="weatherDay"></h4>
+							<img
+								id="weatherImg"
+								src="" />
+							<h4 id="weatherTemp"></h4>
+						</div>
+						<span class="separator"></span>
+						<div class="weather-showcase">
+							<h4 id="weatherDay1"></h4>
+							<img
+								id="weatherImg1"
+								src="" />
+							<p id="weatherTemp1"></p>
+						</div>
+						<span class="separator"></span>
+						<div class="weather-showcase">
+							<h4 id="weatherDay2"></h4>
+							<img
+								id="weatherImg2"
+								src="" />
+							<p id="weatherTemp2"></p>
+						</div>
+					</div>
+					<a href="dashboard.html"
+						><img
+							src="/img/User.png"
+							alt="user"
+					/></a>
+				</div>
+				<div id="todayDate"></div>
+			</nav>
+		</header>
+		<hr />
+
+		<main class="dashboard">
+			<section class="newsfeed">
+				<article>
+					<h1 id="newsAdd">Aktuellt</h1>
+					<div class="date" id="dateTime">datum</div>
+					<p
+						class="newsOne"
+						id="newsfeed"></p>
+					<br />
+					<div class="btnContainer">
+						<button class="prev-button" id="prevNewsBtn">Förra</button>
+						<button class="next-button" id="nextNewsBtn">Nästa</button>
+					</div>
+				</article>
+			</section>
+
+			<section class="voting">
+				<article>
+					<h1 id="vote">Omröstningar</h1>
+					<p class="voteOne" id="voteInput">
+						 ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+						aliquip ex ea commodo consequat. Duis aute irure dolor in
+						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+						pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+						culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+					<br />
+					<div class="btnContainer">
+						<button
+							id="yesBtn1"
+							class="yesBtn1">
+							Ja
+						</button>
+						<button
+							id="noBtn1"
+							class="noBtn1">
+							Nej
+						</button>
+					</div>
+					<div class="btnContainer">
+						<button class="prev-button" id="prevVoteBtn">Förra</button>
+						<button class="next-button" id="nextVoteBtn">Nästa</button>
+					</div>
+				</article>
+			</section>
+			<section class="suggestions">
+				<article>
+					<h1 id="suggestionBox">Förslagslåda</h1>
+					<textarea
+						id="sgstInput"
+						class="sgstInput"
+						placeholder="Skriv din text här..."></textarea>
+					<br />
+					<button
+						id="sgstBtn"
+						class="sgstBtn"
+						type="submit"
+						value="Push Data">
+						Skicka in
+					</button>
+				</article>
+			</section>
+			<section>
+				<article class="blockchain" id="blockchain">
+					<h1 id="blockchainStatus">Dina deltaganden</h1>
+					<p id="blockchainInput">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+						aliquip ex ea commodo consequat. Duis aute irure dolor in
+						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+						pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+						culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+					<br />
+					<div class="btnContainer">
+						<button
+							id="yesBtn2"
+							class="yesBtn2">
+							Ja
+						</button>
+						<button
+							id="noBtn2"
+							class="noBtn2">
+							Nej
+						</button>
+					</div>
+					<div class="btnContainer">
+						<button class="prev-button" id="prevAttendBtn">Förra</button>
+						<button class="next-button" id="nextAttendBtn">Nästa</button>
+					</div>
+				</article>
+			</section>
+		</main>
+	</body>
+</html>

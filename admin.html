@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="icon" href="/img/Icon.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="style.css">
+    <script src="adminScroll.js" defer type="module"></script>
+</head>
+
+<body>
+<header>
+<nav>
+    <div class="container-navbar">
+    <ul class="list-navbar">
+        <li><a href="userpage.html">Hem</a></li>
+        <li><a href="dashboard.html">Om oss</a></li>
+        <li><a href="#">Kunder</a></li>
+        <li><a href="#">Kontakta Oss</a></li>
+    </ul>
+    <h2 class="navbar heading"><span class="navbar-span">S</span>ynergy<span class="navbar-span">S</span>ystems</h2>
+    <button id="loginBtn" class="login-btn">Logga ut</button>
+    </div>
+</nav>
+
+</header>
+<hr>
+
+<main class="admin">
+
+    <section class="newVote">
+        <article>
+            <h1>Ny omröstning</h1><br>
+            <!--<p class="newsOne">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br>-->
+
+            <textarea class="voteInput" placeholder="Skriv ditt förslag här..."></textarea>
+            <button id="newVoteBtn" class="newVoteBtn">Skicka in</button>
+        </article>
+        
+        
+    </section>
+
+    <section class="inbox">
+        <article>
+            <h1>Inbox</h1><br>
+            <p class="inboxText" id="inboxText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="btnContainer">
+                <button class="prev-button" id="prevInboxBtn">Förra</button>
+                <button class="next-button" id="nextInboxBtn">Nästa</button>
+            </div>
+        </article>
+    </section>
+
+    <section class="ongoingVotes">
+        <article>
+            <h1>Pågående omröstningar</h1><br>
+            <p class="ongoingOne" id="ongoingText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br>
+            <div class="removeBtnContainer">
+                <button id="removeBtn1" class="removeBtn1">Avsluta omröstning</button>
+            </div>
+            <div class="btnContainer">
+                <button class="prev-button" id="prevOngBtn">Förra</button>
+                <button class="next-button" id="nextOngBtn">Nästa</button>
+            </div>
+            <!--<h2><br></h2>
+            <p class="ongoingTwo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br>
+            <div class="removeBtnContainer">
+                <button id="removeBtn2" class="removeBtn2">Avsluta omörstning</button>
+            </div>-->
+        </article>
+    </section>
+</main>
+
+
+<footer class="footer">
+    <img src=""  alt=""  id="">
+    <p>Nyhetsbrev<br>prenumerera på vårt nyhetsbrev</p>
+</footer>
+
+
+
+
+
+</body>
+</html>
