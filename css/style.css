@@ -133,7 +133,7 @@ body {
 }
 
 .container-contact {
-	background-image: url(./img/form-background.jpg);
+	background-image: url(/img/form-background.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -838,10 +838,13 @@ input[type=submit]:hover {
 	margin: 10px;
 }
 
-.date {
+#dateTime {
+	position: relative;
+}
+
+article .id{
 	position: absolute;
-	top: 3px;
-	right: 10px;
+	margin-left: 20px;
 }
 
 .dashboard textarea {
@@ -880,6 +883,7 @@ article p {
 article button {
 	width: 16%;
 }
+
 
 /* -----ADMIN----- */
 

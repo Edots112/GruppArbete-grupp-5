@@ -10,13 +10,14 @@ function loginUser (event) {
         const loginInput = document.getElementById("loginTextInput").value;
         const passwordInput = document.getElementById("passwordInput").value;
 
-        for (userInlog in user) {
+        for (const userInlog in user) {
             let userlogin = user[userInlog].username;              
             let userPassword = user[userInlog].password;
 
             if (userlogin === loginInput && userPassword === passwordInput) {
                 storeUserInput();
                 window.location.href = "userpage.html";
+				document.getElementById("loginForm").style.display = "none";
                 break;
             } else {
                 errorMsg();
