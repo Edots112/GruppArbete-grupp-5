@@ -5,19 +5,19 @@
 const paragraphs = [
     'Här är en nyhet',
     'Här är en annan nyhet',
-    'Här är en sista nyhet'
+    'Här är en sista nyhet',
   ];
   
 let currentParagraph = 0;
 
-function changeParagraph(direction) {
+function changeParagraph(direction, elementId) {
     if (direction === 'next') {
       currentParagraph = (currentParagraph + 1) % paragraphs.length;
     } else if (direction === 'prev') {
       currentParagraph = (currentParagraph - 1 + paragraphs.length) % paragraphs.length;
     }
     console.log(currentParagraph);
-    document.getElementById('newsfeed').innerText = paragraphs[currentParagraph];
+    elementId.innerText = paragraphs[currentParagraph];
     console.log('change news');
 }
 

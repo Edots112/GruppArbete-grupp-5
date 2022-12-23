@@ -16,12 +16,12 @@
 			sizes="16x16" />
 		<link
 			rel="stylesheet"
-			href="style.css" />
+			href="./css/style.css" />
 		<script
 			src="/app.js"
 			defer
 			type="module"></script>
-		<script src="dashboard.js" defer type="module"></script>
+		<script src="app.js" defer type="module"></script>
 	</head>
 
 	<body>
@@ -30,7 +30,7 @@
 				<div class="container-navbar nav-userpage nav-dashboard">
 					<ul class="list-navbar">
 						<li id><a>Hem</a></li>
-                        <li id="User"><a id="adminBtn">Admin</a></li>
+                        <li id="user"><a id="adminBtn">Admin</a></li>
 					</ul>
 					<div class="weatherContainer">
 						<div class="weather-showcase">
@@ -70,17 +70,19 @@
 
 		<main class="dashboard">
 			<section class="newsfeed">
-				<article>
+				<article >
+					<h3 class="id" id="idNews"></h3>
 					<h1 id="newsAdd">Aktuellt</h1>
-					<div class="date" id="dateTime">datum</div>
+					<div class="date" id="dateTimeNews"></div>
 					<p
 						class="newsOne"
-						id="newsfeed"></p>
+						id="newsFeed"></p>
 					<br />
-					<div class="btnContainer">
+					<button id="nextNews">Nästa</button>
+					<!-- <div class="btnContainer">
 						<button class="prev-button" id="prevNewsBtn">Förra</button>
 						<button class="next-button" id="nextNewsBtn">Nästa</button>
-					</div>
+					</div> -->
 				</article>
 			</section>
 
@@ -117,7 +119,9 @@
 			</section>
 			<section class="suggestions">
 				<article>
+					<h3 class="id" id="id"></h3>
 					<h1 id="suggestionBox">Förslagslåda</h1>
+					<div class="date" id="dateTimeSuggestion"></div>
 					<textarea
 						id="sgstInput"
 						class="sgstInput"
