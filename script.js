@@ -1,5 +1,6 @@
 import Sheet from "./sheet.js";
 import Time from "./time.js";
+import getArray from "./getArray.js";
 
 const user = document.getElementById("user");
 const work = document.getElementById("work");
@@ -9,17 +10,25 @@ const validateBtn = document.getElementById("validateBtn");
 const editBtn = document.getElementById("editBtn");
 const adminUser = document.getElementById("adminUser");
 const createBtn = document.getElementById("createBtn");
-const desc = document.getElementById("desc");
+
 const select = document.getElementById("options");
+const addAlt = document.getElementById("addAltBtn");
+var count = 2;
+
 
 // SKAPA VÅR KEDJA
-let timeSheet = new Sheet();
+ let timeSheet = new Sheet();
 
 validateBtn.addEventListener("click", () => {
     console.log("Börjar validering");
     timeSheet.isChainValid();
-})
+}) 
 
+/////////////////////
+//Question-to-array//
+/////////////////////
+let alternativ = [];
+let info = new getArray(count, alternativ);
 
 /////////////////////
 /////////EDIT////////
@@ -30,18 +39,26 @@ editBtn.addEventListener("click", () => {
     timeSheet.timeSheet[2].data.work = "Ändrad alternativ";
     timeSheet.timeSheet[2].data.user = "Ändrad val";
     printTimes();
+}); 
+
+/////////////////////
+///////Add-Alt///////
+/////////////////////
+
+addAlt.addEventListener("click", () => {
+    info.addOption()
 });
 
 /////////////////////
 /////////VOTE////////
 /////////////////////
 
-saveWorkBtn.addEventListener("click", () => {
+ saveWorkBtn.addEventListener("click", () => {
 
 
         // SKAPA NYTT OBJEKT
         let newWorkTime = {
-            //user: user.value,
+            //QUESTION
             user: options.value,
             work: "Röstade för: "+work.value,
             isPoll: 0
@@ -51,7 +68,7 @@ saveWorkBtn.addEventListener("click", () => {
         timeSheet.addTime(new Time(newWorkTime));
 
     setTimeout(printTimes, 100);
-})
+}) 
 
 /////////////////////
 ////////CREATE///////
@@ -59,18 +76,23 @@ saveWorkBtn.addEventListener("click", () => {
 
 createBtn.addEventListener("click", () => {
 
+    info.collect();
+
+    //console.log("local count = "+count);
 
     // SKAPA NY POLL
-    let newWorkTime = {
+     let newWorkTime = {
         user: "Val om: "+adminUser.value,
-        work: "Alternativ: "+desc.value,
+        work: "Alternativ: "+info.test.slice(1).join(" - "),
         isPoll: 1
     }
 
     // ÄNDRA
     timeSheet.addTime(new Time(newWorkTime));
 
-setTimeout(printTimes, 100);
+    
+
+setTimeout(printTimes, 100); 
 })
 
 
@@ -92,14 +114,11 @@ function printTimes() {
         //Gör options till en array
         const vals = [...options].map(el => el.value); 
 
-        //console.log(vals);
-        //console.log("work data user: "+work.data.user+" --- ", "work data isPoll.value: "+work.data.isPoll.value+" --- ", "work data isPoll: "+work.data.isPoll+" --- ");   
-        //Check for duplicates, if there are no duplicates, append work.data.user (poll name)
-
+        //Check for duplicates
         if (work.data.isPoll === 1){
             for(let i=0; i<vals.length; i++){
                 //select.setAttribute("value", option)
-                console.log(vals);
+                //console.log(vals);
                 if(!vals.includes(work.data.user)){
                 select.appendChild(option)
                 //option.setAttribute("value", option.value)
@@ -121,9 +140,8 @@ function printTimes() {
         timeBox.style.margin = "20px";
     
         timeBox.id = work.id;
-        //Skriver ut förra, och nuvarande hashen (ej synligt i vanlig vy), skriver ut vad man röstar om och valda alternativ,
+        //Skriver ut förra, och nuvarande hashen, skriver ut vad man röstar om och valda alternativ,
         timeBox.innerHTML = "<p>"+"PREVIOUS HASH: "+work.prevHash+"<br/>"+work.data.user+"<br/>"+work.data.work+"<br/> Poll true or false: "+work.data.isPoll+"<br/>"+"THIS-HASH: "+work.hash+"</p>";
-        
         showtimeList.appendChild(timeBox);
     })
 }
