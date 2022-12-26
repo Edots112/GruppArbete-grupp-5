@@ -927,7 +927,68 @@ article label {
 	font-weight: 500;
 }
 
+#showtimeList{
+	height: 40rem;
+	padding: 50px 25px;
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	border: 1px;
+	overflow: scroll;
+	scrollbar-color:rgb(133, 133, 129, 0.5);
+	scroll-snap-type: y mandatory;
+	z-index: 1;
+	background-color: rgba(250, 250, 250, 0.9);
+	border-radius: 10px;
+}
 
+#showtimeList div {
+	scroll-snap-align: center;
+	margin: 25px 25px;
+	padding: 30px 30px;
+	border-radius: 10px;
+	background-color: rgb(133, 133, 129, 0.5);
+}
+
+#closeButton{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: -10px;
+	right: 10px;
+	cursor: pointer;
+	font-size: 3rem;
+	z-index: 2;
+	text-align: center;
+	transition: .1s;
+}
+
+#closeButton:hover{
+	transform: scale(1.1);
+}
+
+#validateButton {
+	height: 40px;
+	width: 10rem;
+	position: absolute;
+	top: 10px;
+	right: 50%;
+	transform: translate(50%, 0);
+	cursor: pointer;
+	font-size: 1rem;
+	z-index: 2;
+	text-align: center;
+	transition: .1s;
+	margin: 10px;
+	outline: none;
+	border: 1px solid black;
+	border-radius: 5px
+}
+
+.timeBox{
+	background-color: greenyellow;
+}
 
 /* -----ADMIN----- */
 

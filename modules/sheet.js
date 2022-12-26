@@ -42,21 +42,23 @@ export default class Sheet {
 
            // console.log("Testa block", currentBlock, prevBlock);
 
-            let testHash = currentBlock.calculateHash().then(hash => {
-                console.log("testHash", hash);
-                if (currentBlock.hash !== hash) {
-                    console.log("INVALID! Not same hash!", currentBlock.hash, hash);
-                    // return false;
-                }
-            });
+            // let testHash =  currentBlock.calculateHash().then(hash => {
+            //     console.log("testHash", hash);
+            //     if (currentBlock.hash !== hash) {
+            //         console.log("INVALID! Not same hash!", currentBlock.hash, hash);
+            //         // return false;
+            //     }
+            // });
 
-            if (currentBlock.prevHash !== prevBlock.hash) {
-                console.log("Invalid: Not same prev hash");
-               // return false;
-            }
+            // if (currentBlock.prevHash !== prevBlock.hash) {
+            //     console.log("Invalid: Not same prev hash");
+            //    // return false;
+            // }
 
             console.log("VALID");
            // return true;
+
+
         }
     }
 }
