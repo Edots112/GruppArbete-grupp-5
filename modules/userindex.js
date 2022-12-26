@@ -1,3 +1,5 @@
+export {loginUser, errorMsg, removeBorder, storeUserInput};
+import {adminDashboard} from './admin.js';
 
 function loginUser (event) {
     event.preventDefault();
@@ -9,18 +11,28 @@ function loginUser (event) {
     function checkUser(user) {
         const loginInput = document.getElementById("loginTextInput").value;
         const passwordInput = document.getElementById("passwordInput").value;
+		
 
         for (const userInlog in user) {
             let userlogin = user[userInlog].username;              
             let userPassword = user[userInlog].password;
+			// let isAdmin = user[userInlog].admin;
 
             if (userlogin === loginInput && userPassword === passwordInput) {
                 storeUserInput();
-                window.location.href = "userpage.html";
+                window.location.href = "dashboard.html";
 				document.getElementById("loginForm").style.display = "none";
-                break;
-            } else {
-                errorMsg();
+				// document.getElementById("A").style.display = "none";
+			}
+			//  if (isAdmin)  {
+			// 	const adminBtn = document.createElement("adminBtn");
+			// 	adminBtn.innerHTML = "Admin";
+			// 	adminBtn.id = "adminBtn";
+			// 	document.getElementById("body").appendChild(adminBtn);
+			// 	console.log("admin");
+			// 	adminDashboard();
+			 else {
+				errorMsg();
             }
         }
     }
@@ -52,23 +64,4 @@ function storeUserInput() {
 	localStorage.setItem("loginInput", loginInput);
 }
 
-document.getElementById("loginBtn").addEventListener("click", function (e) {
-	document.querySelector(".login-container").style.display = "block";
-	document.getElementById("loginTextInput").focus();
-});
 
-//create a exit button for the signup page
-document.querySelector(".close-btn").addEventListener("click", function (e) {
-	document.querySelector(".login-container").style.display = "none";
-	removeBorder();
-});
-
-document
-	.getElementById("loginBtn2")
-	.addEventListener("click", function (event) {
-		loginUser(event);
-	});
-
-
-
-		

@@ -1,12 +1,15 @@
 import { displayArray } from "./PushSuggestion.js";
 import { updateNews } from "./PushNews.js";
 
+
 export function adminDashboard(){
-    // Lägg till nyhet
-   document.getElementById("newsAdd").innerHTML = "Lägg till Nyhet";
+    document.getElementById("dateTimeNews").remove();
+    document.getElementById("idNews").remove();
+    document.getElementById("newsAdd").innerHTML = "Lägg till Nyhet";
    document.getElementById("newsFeed").style.display = "none";
-   const textArea = document.createElement("textarea");
-   textArea.classList = ".dashboard";
+
+    const textArea = document.createElement("textarea");
+    textArea.classList = ".dashboard";
     textArea.id = "news";
     textArea.placeholder = "Skriv nyhet här";
     document.getElementById("newsAdd").appendChild(textArea);
@@ -29,6 +32,8 @@ export function adminDashboard(){
     document.getElementById("sgstBtn").style.display = "none";
     document.getElementById("suggestionBox").innerHTML = "Förslag från förslagslådan";
 
+   
+
     // Datum 
     const dateTime = document.createElement("h5");
     dateTime.id = "dateTime";
@@ -42,37 +47,33 @@ export function adminDashboard(){
     fromSuggestions.style.fontWeight = "500";
     document.getElementById("suggestionBox").appendChild(fromSuggestions);
 
-    // Ta bort förslag
-    const removeSuggestion = document.createElement("button");
-    removeSuggestion.classList = "sgstBtn";
-    removeSuggestion.id = "removeSuggestion";
-    removeSuggestion.innerHTML = "Nästa";
-    document.getElementById("suggestionBox").appendChild(removeSuggestion);
-    removeSuggestion.addEventListener("click", displayArray);
-
+    // Kolla förslagslådan
+    const checkSuggestionBox = document.createElement("button");
+    checkSuggestionBox.classList = "article";
+    checkSuggestionBox.id = "checkSuggestionBox";
+    checkSuggestionBox.innerHTML = "Nästa förslag";
+    document.getElementById("suggestionBox").appendChild(checkSuggestionBox);
 
    // Skapa Omröstning
    document.querySelector(".voteOne").style.display = "none";
-    document.getElementById("yesBtn1").style.display = "none";
-    document.getElementById("noBtn1").style.display = "none";
     document.getElementById("vote").innerHTML = "Skapa Omröstning";
 
-    const voteArea = document.createElement("textarea");
-    voteArea.classList = ".dashboard";
-    voteArea.id = "voteArea";
-    voteArea.placeholder = "Skriv om";
-    document.getElementById("vote").appendChild(voteArea);
+    // const voteArea = document.createElement("textarea");
+    // voteArea.classList = ".dashboard";
+    // voteArea.id = "voteArea";
+    // voteArea.placeholder = "Skriv om";
+    // document.getElementById("vote").appendChild(voteArea);
 
-    const br2 = document.createElement("br");
-    document.getElementById("vote").appendChild(br2);
+    // const br2 = document.createElement("br");
+    // document.getElementById("vote").appendChild(br2);
 
 
-    //skapa omröstning
-    const submitVote = document.createElement("button");
-    submitVote.classList = "article";
-    submitVote.id = "submitVote";
-    submitVote.innerHTML = "Skapa";
-    document.getElementById("vote").appendChild(submitVote);
+    // //skapa omröstning
+    // const submitVote = document.createElement("button");
+    // submitVote.classList = "article";
+    // submitVote.id = "submitVote";
+    // submitVote.innerHTML = "Skapa";
+    // document.getElementById("vote").appendChild(submitVote);
 
 
     // Avsluta Omröstning
@@ -90,9 +91,11 @@ export function adminDashboard(){
     document.getElementById("blockchain").appendChild(endVote);
 
     // Ändra knapp 
+    const li = document.createElement("li");
     const userBtn = document.createElement("a");
     userBtn.innerHTML = "User Dashboard";
-    document.querySelector(".list-navbar").appendChild(userBtn);
+    li.appendChild(userBtn);
+    document.querySelector(".list-navbar").appendChild(li);
 
 
     const adminBtn = document.getElementById("adminBtn");
@@ -106,6 +109,37 @@ export function adminDashboard(){
     });
 
     document.getElementById("nextNews").remove();
+
+
+    const parentElement = document.getElementById('vote');
+
+    const div = `
+      <div>
+        <input type="text" id="adminUser" placeholder="Vad ska vi rösta om">
+        <br>
+        <ul id="adminAlt">
+          <li>
+            <label for="desc1">Alternativ 1:</label>
+            <input id="desc1" type="text" placeholder="Alternativ 1:">
+          </li>
+          <li>
+            <label for="desc2">Alternativ 2:</label>
+            <input id="desc2" type="text" placeholder="Alternativ 2:">
+          </li>
+        </ul>
+        <button id="addAlt">Lägg till</button>
+        <button id="createBtn">Skapa</button>
+        
+      </div>
+    `;
+    parentElement.insertAdjacentHTML('beforeend', div);
+
+
+    // const chain = document.createElement("div");
+    // chain.innerHTML = "showtimeList";
+    // chain.id = "showtimeList";
+    // document.getElementById("blockchainInput").appendChild(chain);
+
+
+    document.getElementById("userVote").remove();
 }
-
-

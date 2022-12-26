@@ -28,10 +28,11 @@
 		<header>
 			<nav>
 				<div class="container-navbar nav-userpage nav-dashboard">
-					<ul class="list-navbar">
-						<li id><a>Hem</a></li>
+					<ul class="list-navbar" id="dashboardNav">
+						<li id=""><a href="userpage.html">Hem</a></li>
                         <li id="user"><a id="adminBtn">Admin</a></li>
 					</ul>
+					<li id="blockchains"><a id="blockchains">blockchain</a></li>
 					<div class="weatherContainer">
 						<div class="weather-showcase">
 							<h4 id="weatherDay"></h4>
@@ -73,7 +74,7 @@
 				<article >
 					<h3 class="id" id="idNews"></h3>
 					<h1 id="newsAdd">Aktuellt</h1>
-					<div class="date" id="dateTimeNews"></div>
+					<h3 class="date" id="dateTimeNews"></h3>
 					<p
 						class="newsOne"
 						id="newsFeed"></p>
@@ -87,34 +88,21 @@
 			</section>
 
 			<section class="voting">
-				<article>
+				<article id="votingForm">
 					<h1 id="vote">Omröstningar</h1>
 					<p class="voteOne" id="voteInput">
-						 ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-						aliquip ex ea commodo consequat. Duis aute irure dolor in
-						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-						pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-						culpa qui officia deserunt mollit anim id est laborum.
 					</p>
+					<div id="userVote">
+
+						<label for="options">Choose a poll:</label>
+							<select name="options" id="options">
+							<option >Val om: A</option>
+							<option  selected>Val om: B</option>
+						<input type="text" id="work">
+						<button id="saveWorkBtn">Spara</button>
+					</div> 
 					<br />
-					<div class="btnContainer">
-						<button
-							id="yesBtn1"
-							class="yesBtn1">
-							Ja
-						</button>
-						<button
-							id="noBtn1"
-							class="noBtn1">
-							Nej
-						</button>
-					</div>
-					<div class="btnContainer">
-						<button class="prev-button" id="prevVoteBtn">Förra</button>
-						<button class="next-button" id="nextVoteBtn">Nästa</button>
-					</div>
+
 				</article>
 			</section>
 			<section class="suggestions">
@@ -161,12 +149,13 @@
 							Nej
 						</button>
 					</div>
-					<div class="btnContainer">
+					<!-- <div class="btnContainer">
 						<button class="prev-button" id="prevAttendBtn">Förra</button>
 						<button class="next-button" id="nextAttendBtn">Nästa</button>
-					</div>
+					</div> -->
 				</article>
 			</section>
 		</main>
+		<div id="showtimeList">test</div>
 	</body>
 </html>

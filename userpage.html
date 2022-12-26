@@ -28,6 +28,7 @@
 				<div class="container-navbar nav-userpage ">
 					<ul class="list-navbar">
 						<li><a href="index.html">Hem</a></li>
+						<li><a id="checkBlochChain">Blockchain</a></li>
 					</ul>
 					<p
 						class="quote"
@@ -56,8 +57,8 @@
 							
 						</div>
 					</div>
+					<button type="submit" id="loginBtn" class="login-btn">Logga in</button>
 				</div>
-				<button type="submit" id="loginBtn" class="login-btn">Logga in</button>
 				<!-- nav-toggler for mobile version only -->
 				<button style="display: none;" class="nav-toggler">
 					<span>Open</span>
@@ -88,6 +89,27 @@
 				</h2>
 			</div>
 		</section>
+		<div class="login-container">
+
+			<form action="userpage.html" id="loginForm" >
+		
+				<div class="close-btn" id="closeBtn">&times;</div>
+				<h3>Välkommen</h3>
+				<!-- <label for="text-input">Username</label> -->
+				<input
+					type="text"
+					name="text-input"
+					id="loginTextInput"
+					placeholder="Användarnamn" 
+					focus/>
+				<input
+					type="password"
+					name="password-input"
+					id="passwordInput"
+					placeholder="Lösenord" />
+					<p id="errorMsgLogin"></p>
+				<button type="submit" id="loginBtn2">Logga in</button>
+			</div>
 		 
 		<footer class="container-footer">
 			<div class="footer-userpage">
@@ -104,5 +126,6 @@
 				</div>
 			</div>
 		</footer>
+		<div id="showtimeList">test</div>
 	</body>
 </html>
