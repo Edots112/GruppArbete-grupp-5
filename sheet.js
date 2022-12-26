@@ -1,5 +1,4 @@
 import Time from "./time.js";
-
 export default class Sheet {
     constructor() {
         //timeSheet från scritp.js
@@ -28,6 +27,8 @@ export default class Sheet {
         // newTime.hash = await newTime.calculateHash();
         // PUSHA
         this.timeSheet.push(newTime);
+        let timeSheetString = JSON.stringify(this.timeSheet);
+        localStorage.setItem("timeSheet", timeSheetString);
     }
 
     isChainValid() {
