@@ -1,7 +1,7 @@
 
 export {updateNews, displayNews, storeNews, retrieveNews};
 
-let NewsArray = [{id: 0, suggestion: "Test", date: new Date()}];
+let NewsArray = [{id: 0, suggestion: "Rekord varmt i kommunen!", date: new Date()}];
 let getDate = new Date();
 let counter = 0; 
 
@@ -10,8 +10,8 @@ function displayNews() {
  let getDate = document.getElementById("dateTimeNews");
  let id = document.getElementById("idNews");
 
- element.innerHTML = NewsArray[counter].suggestion;
- getDate.innerHTML = NewsArray[counter].date;
+ element.innerHTML = NewsArray[counter].suggestion ;
+ getDate.innerHTML = NewsArray[counter].date.toLocaleString();
  id.innerHTML = NewsArray[counter].id + 1;
 
  counter++;
