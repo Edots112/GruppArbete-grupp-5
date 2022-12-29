@@ -22,7 +22,7 @@ import { getArray } from "./modules/getArray.js";
 import Sheet from "./modules/sheet.js";
 import Time from "./modules/time.js";
 import { printTimes } from "./modules/printTimes.js";
-import {displayBlockchain} from "./modules/showBlockchain.js";
+import { displayBlockchain } from "./modules/showBlockchain.js";
 
 var count = 2;
 let alternativ = [];
@@ -37,35 +37,42 @@ if (chain) {
 	console.log("No one is logged in.");
 }
 
-addEventListener ("DOMContentLoaded", function () {
+const userid = localStorage.getItem("loginInput");
+
+
+addEventListener("DOMContentLoaded", function () {
 	if (window.location.pathname === "/dashboard.html") {
-    console.log("dashboard");
-		// printTimes();
+		console.log("dashboard");
 		displayNews();
+		printTimes();
+		timeSheet.findBlocksByUserId(userid);
+		weatherAPI();
 	} else {
-    console.log("not dashboard");
-  }
+		console.log("not dashboard");
+	}
 });
 
 window.onload = function () {
 	if (window.location.pathname === "/userpage.html") {
 		// Startar bakgrundsbild på userpage.html
 		startChangeBackground(changeBackground);
+		weatherAPI();
 	}
 };
 
-// Hämtar väderdata från fetch.js
-weatherAPI();
+if (window.location.pathname === "/index.html") {
+	document.getElementById("scrollUp").addEventListener("click", () => scroll('up'));
+	document.getElementById("scrollDown").addEventListener("click", () => scroll('down'));
+}
+
 
 document.querySelector("body").addEventListener("click", function (e) {
-if (e.target.location === "userpage.html") {
-  startChangeBackground(changeBackground);
-  }
 
 	if (e.target.id === "adminBtn") {
 		adminDashboard();
 		retrieveData();
 		displayArray();
+		timeSheet.findPollBlocks();
 	}
 
 	if (e.target.id === "sgstBtn") {
@@ -91,11 +98,10 @@ if (e.target.location === "userpage.html") {
 		document.getElementById("loginTextInput").focus();
 	}
 
-  if (e.target.id === "closeBtn") {
-    document.querySelector(".login-container").style.display = "none";
-    removeBorder();
-  }
-
+	if (e.target.id === "closeBtn") {
+		document.querySelector(".login-container").style.display = "none";
+		removeBorder();
+	}
 
 	if (e.target.id === "loginBtn2") {
 		loginUser(e);
@@ -118,16 +124,17 @@ if (e.target.location === "userpage.html") {
 
 		setTimeout(printTimes, 100);
 		console.log(timeSheet.timeSheet);
+		printTimes();
+		timeSheet.findPollBlocks();
 	}
 	if (e.target.id === "createBtn") {
 		info.collect();
 		console.log(timeSheet.timeSheet);
-		//console.log("local count = "+count);
 
 		// SKAPA NY POLL
 		let newWorkTime = {
 			user: "Val om: " + adminUser.value,
-			work: "Alternativ: " + info.test.slice(1).join(" - "),
+			work: "Alternativ: " + info.test.slice(1).join(" , "),
 			isPoll: 1,
 		};
 
@@ -137,39 +144,32 @@ if (e.target.location === "userpage.html") {
 		setTimeout(printTimes, 100);
 	}
 
-	// if (e.target.id === "validateBtn") {
-	// 	console.log("Börjar validering");
-	// 	timeSheet.isChainValid();
-	// }
-
 	if (e.target.id === "saveBtn") {
 		localStorage.setItem("timeSheet", JSON.stringify(timeSheet));
 		console.log("Sparat");
 	}
 
-	// if (e.target.id === "blockchains") {
-	// 	const timeSheetString = localStorage.getItem("timeSheet");
-	// 	timeSheet = new Sheet(JSON.parse(timeSheetString));
-	// 	printTimes();
-	// 	timeSheet.isChainValid();
-	// }
 
-  if (e.target.id === "checkBlockChain") {
-    console.log("checkBlockChain");
-    const timeSheetString = localStorage.getItem("timeSheet");
+	if (e.target.id === "checkBlockChain") {
+		console.log("checkBlockChain");
+		const timeSheetString = localStorage.getItem("timeSheet");
 		timeSheet = new Sheet(JSON.parse(timeSheetString));
-    displayBlockchain();
-  }
+		displayBlockchain();
+		const element = document.getElementById('checkBlockChain'); 
 
-  if (e.target.id === "closeButton") {
-    document.getElementById("showtimeList").remove();
-    
-  }
+		element.removeEventListener('click', updateElementBorder);
 
-  if (e.target.id === "validateButton") {
-    console.log("Börjar validering");
-    timeSheet.isChainValid()
-  }
+	}
+
+	if (e.target.id === "closeButton") {
+		document.getElementById("showtimeList").remove();
+	}
+
+	if (e.target.id === "validateButton") {
+		timeSheet.isChainValid();
+		console.log("isChainValid");
+		updateElementBorder()
+	}
 });
 
 window.addEventListener("unload", storeData);
@@ -178,30 +178,40 @@ window.addEventListener("load", retrieveData);
 window.addEventListener("unload", storeNews);
 window.addEventListener("load", retrieveNews);
 
-// // Eventlistener för scrollfunktion för index.html
-// document.getElementById("scrollUp").addEventListener("click", () => scroll('up'));
-// document.getElementById("scrollDown").addEventListener("click", () => scroll('down'));
 
-const loginInput = localStorage.getItem("loginInput");
+function createAdminButton() {
 
-// function checkAdmin () {
-//   if (loginInput === "admin") {
-//     const navLi = document.createElement("li");
-//     const adminBtn = document.createElement("a");
-//     adminBtn.innerHTML = "Admin";
-//     adminBtn.id = "adminBtn";
-//     navLi.appendChild(adminBtn);
-//     document.getElementById("dashboardNav").appendChild(navLi);
-//     console.log("admin");
-//     displayNews();
-//   } else{
-//     return;
-//   }
-// }
+	const url = window.location.href;
 
-// checkAdmin();
+	const params = new URLSearchParams(url.split("?")[1]);
+	console.log(params);
 
-// loginUser(e);
+	if (params.has("isAdmin")) {
+		const adminBtn = document.createElement("a");
+		adminBtn.innerHTML = "Admin";
+		adminBtn.className = "list-navbar";
+		adminBtn.id = "adminBtn";
+		const adminLink = document.createElement("li");
+		adminLink.appendChild(adminBtn);
 
-console.log(timeSheet.timeSheet);
-console.log(timeSheet.timeSheet[1].data.user);
+		document.getElementById("dashboardNav").appendChild(adminLink);
+	}
+}
+
+window.addEventListener("load", createAdminButton);
+
+
+async function updateElementBorder() {
+	const elements = document.querySelectorAll('.timeBox'); 
+	const validateButton = document.getElementById("validateButton"); 
+  
+	elements.forEach(async element => {
+	  if (await timeSheet.isChainValid()) { 
+		element.style.backgroundColor = 'green';
+		validateButton.innerHTML = "Validerad"
+		validateButton.style = "background-color: " + "green";
+	  } else {
+		element.style.border = '2px solid red'; 
+	  }
+	});
+  }

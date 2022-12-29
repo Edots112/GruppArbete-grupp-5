@@ -6,7 +6,7 @@ export function adminDashboard(){
     document.getElementById("dateTimeNews").remove();
     document.getElementById("idNews").remove();
     document.getElementById("newsAdd").innerHTML = "Lägg till Nyhet";
-   document.getElementById("newsFeed").style.display = "none";
+   document.getElementById("newsFeed").remove();
 
     const textArea = document.createElement("textarea");
     textArea.classList = ".dashboard";
@@ -32,7 +32,6 @@ export function adminDashboard(){
     document.getElementById("sgstBtn").style.display = "none";
     document.getElementById("suggestionBox").innerHTML = "Förslag från förslagslådan";
 
-   
 
     // Datum 
     const dateTime = document.createElement("h5");
@@ -58,32 +57,15 @@ export function adminDashboard(){
    document.querySelector(".voteOne").style.display = "none";
     document.getElementById("vote").innerHTML = "Skapa Omröstning";
 
-    // const voteArea = document.createElement("textarea");
-    // voteArea.classList = ".dashboard";
-    // voteArea.id = "voteArea";
-    // voteArea.placeholder = "Skriv om";
-    // document.getElementById("vote").appendChild(voteArea);
-
-    // const br2 = document.createElement("br");
-    // document.getElementById("vote").appendChild(br2);
-
-
-    // //skapa omröstning
-    // const submitVote = document.createElement("button");
-    // submitVote.classList = "article";
-    // submitVote.id = "submitVote";
-    // submitVote.innerHTML = "Skapa";
-    // document.getElementById("vote").appendChild(submitVote);
-
-
+  
     // Avsluta Omröstning
-    document.getElementById("yesBtn2").style.display = "none";
-    document.getElementById("noBtn2").style.display = "none";
     document.getElementById("blockchainStatus").innerHTML = "Avsluta Omröstning";
-    document.getElementById("blockchainInput").innerHTML = document.getElementById("voteInput").innerHTML;
-    
-    
+    const blockElements = document.querySelectorAll(".blockElement");
+    for (const element of blockElements) {
+    element.remove();
+}
 
+    
     const endVote = document.createElement("button");
     endVote.classList = "article";
     endVote.id = "endVote";
@@ -99,16 +81,10 @@ export function adminDashboard(){
 
 
     const adminBtn = document.getElementById("adminBtn");
-    // adminBtn.innerHTML = "User Dashboard";
     adminBtn.removeEventListener("click", adminDashboard);
     adminBtn.style.display = "none";
     
-    if (userBtn)
-    userBtn.addEventListener("click", () => {
-        window.location.reload();
-    });
-
-    document.getElementById("nextNews").remove();
+   
 
 
     const parentElement = document.getElementById('vote');
@@ -134,12 +110,12 @@ export function adminDashboard(){
     `;
     parentElement.insertAdjacentHTML('beforeend', div);
 
-
-    // const chain = document.createElement("div");
-    // chain.innerHTML = "showtimeList";
-    // chain.id = "showtimeList";
-    // document.getElementById("blockchainInput").appendChild(chain);
-
-
     document.getElementById("userVote").remove();
+
+    if (userBtn)
+    userBtn.addEventListener("click", () => {
+        window.location.reload();
+    });
+
+    document.getElementById("nextNews").remove();
 }

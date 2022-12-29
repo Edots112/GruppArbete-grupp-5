@@ -8,7 +8,7 @@ function loginUser (event) {
     .then((response) => response.json())
     .then((data) => checkUser(data));    
 
-    function checkUser(user) {
+    async function checkUser(user) {
         const loginInput = document.getElementById("loginTextInput").value;
         const passwordInput = document.getElementById("passwordInput").value;
 		
@@ -16,22 +16,19 @@ function loginUser (event) {
         for (const userInlog in user) {
             let userlogin = user[userInlog].username;              
             let userPassword = user[userInlog].password;
-			// let isAdmin = user[userInlog].admin;
+			let isAdmin = user[userInlog].admin;
 
             if (userlogin === loginInput && userPassword === passwordInput) {
                 storeUserInput();
                 window.location.href = "dashboard.html";
 				document.getElementById("loginForm").style.display = "none";
-				// document.getElementById("A").style.display = "none";
+				console.log("user");
 			}
-			//  if (isAdmin)  {
-			// 	const adminBtn = document.createElement("adminBtn");
-			// 	adminBtn.innerHTML = "Admin";
-			// 	adminBtn.id = "adminBtn";
-			// 	document.getElementById("body").appendChild(adminBtn);
-			// 	console.log("admin");
-			// 	adminDashboard();
-			 else {
+			 else if (isAdmin)  {
+				window.location.href = `dashboard.html?isAdmin=${isAdmin}`;
+				storeUserInput();
+				console.log("admin");
+			  } else {
 				errorMsg();
             }
         }
