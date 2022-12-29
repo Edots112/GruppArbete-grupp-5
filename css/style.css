@@ -28,8 +28,6 @@ body {
 	backdrop-filter: blur(10rem);
 }
 
-
-
 .list-navbar li {
 	font-size: 35px;
 	padding-left: 10px;
@@ -140,7 +138,6 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-
 }
 
 .container-aboutus {
@@ -160,7 +157,7 @@ body {
 	margin-top: 40px;
 }
 
-.aboutus-containerblock{
+.aboutus-containerblock {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -257,7 +254,6 @@ body {
 	height: 500px;
 	width: 300px;
 }
-
 
 .containerblock img {
 	width: 100%;
@@ -554,7 +550,7 @@ ul {
 	width: 50px;
 }
 
-input[type=submit] {
+input[type="submit"] {
 	background-color: lightgray;
 	border: none;
 	border-radius: 4px;
@@ -565,7 +561,7 @@ input[type=submit] {
 	cursor: pointer;
 }
 
-input[type=submit]:hover {
+input[type="submit"]:hover {
 	color: white;
 	background-color: rgb(240, 102, 102);
 	transition: all 0.5s ease;
@@ -576,8 +572,6 @@ input[type=submit]:hover {
 	border-radius: 50px;
 	padding: 10px 10px;
 }
-
-
 
 .footer-col ul li:not(:last-child) {
 	margin-bottom: 10px;
@@ -621,7 +615,6 @@ input[type=submit]:hover {
 
 /*responsive*/
 
-
 @media (max-width: 767px) {
 	.footer-col {
 		width: 50%;
@@ -634,17 +627,16 @@ input[type=submit]:hover {
 		/* margin-bottom: 20px; */
 		/* display: block; */
 	}
-	.login-btn{
+	.login-btn {
 		margin-top: 80px;
 	}
-	body{
-	background-color: lightgrey;
-
+	body {
+		background-color: lightgrey;
 	}
 	.welcome-heading {
 		top: 260px;
-	} 
-	.container-aboutus{
+	}
+	.container-aboutus {
 		margin-top: 100px;
 	}
 	.container-navbar {
@@ -661,19 +653,22 @@ input[type=submit]:hover {
 		width: 90%;
 		top: 220px;
 	}
-	.container-footer{
+	.container-footer {
 		margin-top: 200px;
 	}
-	.welcome-text h2{
+	.welcome-text h2 {
 		width: 80%;
 	}
-	.welcome-text h1,.span{
+	.welcome-text h1,
+	.span {
 		font-size: 2rem;
 	}
-	.container-navbar h2, .container-navbar span{
-		font-size:3rem;
+	.container-navbar h2,
+	.container-navbar span {
+		font-size: 3rem;
 	}
-	.costumer-two, .costumer-three{
+	.costumer-two,
+	.costumer-three {
 		margin-top: 500px;
 	}
 }
@@ -684,21 +679,19 @@ input[type=submit]:hover {
 	}
 }
 
-
 @media screen and (min-width: 600px) {
 	body {
-	  font-size: 16px;     
+		font-size: 16px;
 	}
-  }
-  
-  @media screen and (max-width: 599px) {
+}
+
+@media screen and (max-width: 599px) {
 	body {
-	  font-size: 14px;
+		font-size: 14px;
 	}
-  }
+}
 
-  /*responsive*/
-
+/*responsive*/
 
 /*START userpage.html*/
 
@@ -779,7 +772,7 @@ input[type=submit]:hover {
 	/* background-color: lightgrey; */
 	backdrop-filter: blur(10rem);
 	position: absolute;
-	bottom: 0; 
+	bottom: 0;
 	width: 100%;
 	height: 125px;
 }
@@ -789,7 +782,6 @@ input[type=submit]:hover {
 	justify-content: space-evenly;
 	align-items: center;
 	padding: 10px;
-
 }
 
 .footerblock {
@@ -821,11 +813,10 @@ input[type=submit]:hover {
 	background-image: url(https://www.riksbyggen.se/globalassets/1-riksbyggen/bostad/bostad/slutsalda-projekt/brf-petunia-slutsalt/petunia_6.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-	min-height: 84vh;
+	min-height: 88vh;
 	width: 100%;
 	grid-template-columns: repeat(2, 2fr);
 }
-
 
 .suggestions,
 .voting,
@@ -833,6 +824,11 @@ input[type=submit]:hover {
 .blockchain {
 	margin: 20px;
 	text-align: center;
+
+}
+
+.blockchain{
+	overflow: scroll;
 }
 
 .newsfeed p {
@@ -845,7 +841,7 @@ input[type=submit]:hover {
 	position: relative;
 }
 
-article .id{
+article .id {
 	position: absolute;
 	margin-left: 20px;
 }
@@ -894,7 +890,7 @@ article button {
 	font-weight: 500;
 	cursor: pointer;
 	outline: none;
-	transition: .3s;
+	transition: 0.3s;
 }
 
 article button:hover {
@@ -919,7 +915,7 @@ article input {
 	height: 40px;
 }
 
-#dashboardNav{
+#dashboardNav {
 	width: 40vh;
 }
 article label {
@@ -927,123 +923,68 @@ article label {
 	font-weight: 500;
 }
 
-
-
-/* -----ADMIN----- */
-
-/* .admin {
-	display: grid;
-
-	background-image: url(https://www.tb.se/wp-content/uploads/2017/11/berget.jpg);
-
-	background-size: cover;
-
-	background-repeat: no-repeat;
-
-	height: 95vh;
-
-	width: 100%;
+#showtimeList {
+	height: 40rem;
+	padding: 50px 25px;
+	position: absolute;
+	top: 50%;
+	left: 40%;
+	transform: translate(-50%, -50%);
+	border: 1px;
+	overflow: scroll;
+	scrollbar-color: rgb(133, 133, 129, 0.5);
+	scroll-snap-type: y mandatory;
+	z-index: 1;
+	background-color: rgba(250, 250, 250, 0.9);
+	border-radius: 10px;
 }
 
-.newVote {
+#showtimeList div {
+	scroll-snap-align: center;
+	margin: 25px 25px;
+	padding: 30px 30px;
+	border-radius: 10px;
+	background-color: rgb(133, 133, 129, 0.5);
 }
 
-.ongoingVotes {
-}
-
-.inbox {
-}
-
-article {
-	position: relative;
-
-
-	transform-origin: translate(0, -50%);
-
-	padding: 3rem;
-}
-
-article h1 {
+#closeButton {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: -10px;
+	right: 10px;
+	cursor: pointer;
+	font-size: 3rem;
+	z-index: 2;
 	text-align: center;
-
-	font-size: 2rem;
+	transition: 0.1s;
 }
 
-article p {
-	border-style: solid;
-
-	background-color: white;
-
-	border-radius: 6px;
-
-	padding: 20px;
+#closeButton:hover {
+	transform: scale(1.1);
 }
 
-.ongoingVotes article {
-	border-style: solid;
-
-	background-color: rgba(240, 248, 255, 0.745);
-
-	margin: 0 40px;
-
-	margin-top: -30rem;
+#validateButton {
+	height: 40px;
+	width: 10rem;
+	position: absolute;
+	top: 10px;
+	right: 50%;
+	transform: translate(50%, 0);
+	cursor: pointer;
+	font-size: 1rem;
+	z-index: 2;
+	text-align: center;
+	transition: 0.1s;
+	margin: 10px;
+	outline: none;
+	border: 1px solid black;
+	border-radius: 5px;
 }
 
-.newVote article {
-	border-style: solid;
-
-	background-color: rgba(240, 248, 255, 0.745);
-
-	margin: 0 40px;
+.timeBox {
+	background-color: greenyellow;
 }
-
-.inbox article {
-	border-style: solid;
-
-	background-color: rgba(240, 248, 255, 0.745);
-
-	margin: 0 40px;
-
-	margin-top: -140px;
-}
-
-.voteInput {
-	width: 100%;
-
-	height: 100px;
-
-	box-sizing: border-box;
-
-	border: 1px solid #000;
-
-	padding: 10px;
-
-	word-break: break-word;
-}
-
-.newVoteBtn {
-	margin-left: auto;
-
-	margin-top: 10px;
-
-	width: 20%;
-}
-
-.removeBtnContainer {
-	display: flex;
-
-	justify-content: space-evenly;
-
-	align-items: center;
-}
-
-article button {
-	width: 36%;
-
-	margin: 0 -100px;
-} */
-
-/* Weather API   */
 
 .weatherContainer {
 	display: flex;

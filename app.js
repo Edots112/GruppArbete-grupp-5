@@ -1,17 +1,28 @@
-import { weatherAPI } from "./modules/fetch.js"; 
-import {changeBackground , startChangeBackground} from "./modules/changeBackground.js";
-import {scroll} from "./modules/scroll.js";
-import {adminDashboard} from "./modules/admin.js";
-import {storeData, retrieveData, displayArray, updateElement,} from "./modules/PushSuggestion.js";
-import {updateNews, displayNews, retrieveNews, storeNews} from "./modules/PushNews.js";
-import {loginUser,removeBorder} from "./modules/userindex.js";
-import {getArray} from "./modules/getArray.js";
+import { weatherAPI } from "./modules/fetch.js";
+import {
+	changeBackground,
+	startChangeBackground,
+} from "./modules/changeBackground.js";
+import { scroll } from "./modules/scroll.js";
+import { adminDashboard } from "./modules/admin.js";
+import {
+	storeData,
+	retrieveData,
+	displayArray,
+	updateElement,
+} from "./modules/PushSuggestion.js";
+import {
+	updateNews,
+	displayNews,
+	retrieveNews,
+	storeNews,
+} from "./modules/PushNews.js";
+import { loginUser, removeBorder } from "./modules/userindex.js";
+import { getArray } from "./modules/getArray.js";
 import Sheet from "./modules/sheet.js";
 import Time from "./modules/time.js";
-import {printTimes} from "./modules/printTimes.js";
-
-
-
+import { printTimes } from "./modules/printTimes.js";
+import { displayBlockchain } from "./modules/showBlockchain.js";
 
 var count = 2;
 let alternativ = [];
@@ -20,163 +31,187 @@ let timeSheet = new Sheet();
 
 let chain = localStorage.getItem("timeSheet");
 
-if (chain) { 
-  timeSheet.timeSheet = JSON.parse(chain);
+if (chain) {
+	timeSheet.timeSheet = JSON.parse(chain);
 } else {
-console.log("No one is logged in.");
+	console.log("No one is logged in.");
 }
 
-window.onload = function() {
-if (window.location.href == "dashboard.html") {
-printTimes();
-// Startar bakgrundsbild på userpage.html
-startChangeBackground(changeBackground);
-}
-}
-// Hämtar väderdata från fetch.js
-weatherAPI();
+const userid = localStorage.getItem("loginInput");
 
 
-
- document.querySelector("body").addEventListener("click", function(e) {
-
-	
-  if (e.target.id === "adminBtn") {
-    adminDashboard();
-    retrieveData();
-    displayArray();
-}
-
-if (e.target.id === "sgstBtn") {
-  console.log("submitArray");
-  updateElement();
-  }
- 
-
-if (e.target.id === "pushNews") {
-   updateNews();
-}
-
-if (e.target.id === "nextNews") {
-  retrieveNews();
-  displayNews();
-}
-
-if (e.target.id === "checkSuggestionBox") {
-  displayArray();
-}
-
-if (e.target.id === "loginBtn") {
-  document.querySelector(".login-container").style.display = "block";
-	document.getElementById("loginTextInput").focus();
-}
-
-if (e.target.id === "close-btn") {
-  document.querySelector(".login-container").style.display = "none";
-  removeBorder();
-
-}
-
-if (e.target.id === "loginBtn2") {
-  loginUser(e);
-}
-
-  if (e.target.id === "addAlt") {
-  info.addOption()
-}
-
-if (e.target.id ==="saveWorkBtn") {
-
-        let newWorkTime = {
-            //QUESTION
-            user: options.value,
-            work: "Röstade för: "+work.value,
-            isPoll: 0
-        }
-
-        // ÄNDRA
-        timeSheet.addTime(new Time(newWorkTime));
-
-    setTimeout(printTimes, 100);
-    console.log(timeSheet.timeSheet);
-}
- if (e.target.id === "createBtn") {
- info.collect();
-    console.log(timeSheet.timeSheet);
-    //console.log("local count = "+count);
-
-    // SKAPA NY POLL
-     let newWorkTime = {
-        user: "Val om: "+adminUser.value,
-        work: "Alternativ: "+info.test.slice(1).join(" - "),
-        isPoll: 1
-    }
-
-    // ÄNDRA
-    timeSheet.addTime(new Time(newWorkTime));
-
-    
-
-// setTimeout(printTimes, 100); 
-}
-
-if (e.target.id === "validateBtn") {
-  console.log("Börjar validering");
-    timeSheet.isChainValid();
- }
-
- if (e.target.id === "saveBtn") {
-  localStorage.setItem("timeSheet", JSON.stringify(timeSheet));
-  console.log("Sparat");
- }
-
-if (e.target.id === "blockchains") {
-  const timeSheetString = localStorage.getItem("timeSheet");
-  timeSheet = new Sheet(JSON.parse(timeSheetString));
-  console.log(timeSheet);
-  console.log("Laddat");
-  printTimes();
-  timeSheet.isChainValid();
-}
-
+addEventListener("DOMContentLoaded", function () {
+	if (window.location.pathname === "/dashboard.html") {
+		console.log("dashboard");
+		displayNews();
+		printTimes();
+		timeSheet.findBlocksByUserId(userid);
+		weatherAPI();
+	} else {
+		console.log("not dashboard");
+	}
 });
 
+window.onload = function () {
+	if (window.location.pathname === "/userpage.html") {
+		// Startar bakgrundsbild på userpage.html
+		startChangeBackground(changeBackground);
+		weatherAPI();
+	}
+};
 
- window.addEventListener("unload", storeData);
- window.addEventListener("load", retrieveData);
- 
+if (window.location.pathname === "/index.html") {
+	document.getElementById("scrollUp").addEventListener("click", () => scroll('up'));
+	document.getElementById("scrollDown").addEventListener("click", () => scroll('down'));
+}
 
+
+document.querySelector("body").addEventListener("click", function (e) {
+
+	if (e.target.id === "adminBtn") {
+		adminDashboard();
+		retrieveData();
+		displayArray();
+		timeSheet.findPollBlocks();
+	}
+
+	if (e.target.id === "sgstBtn") {
+		console.log("submitArray");
+		updateElement();
+	}
+
+	if (e.target.id === "pushNews") {
+		updateNews();
+	}
+
+	if (e.target.id === "nextNews") {
+		retrieveNews();
+		displayNews();
+	}
+
+	if (e.target.id === "checkSuggestionBox") {
+		displayArray();
+	}
+
+	if (e.target.id === "loginBtn") {
+		document.querySelector(".login-container").style.display = "block";
+		document.getElementById("loginTextInput").focus();
+	}
+
+	if (e.target.id === "closeBtn") {
+		document.querySelector(".login-container").style.display = "none";
+		removeBorder();
+	}
+
+	if (e.target.id === "loginBtn2") {
+		loginUser(e);
+	}
+
+	if (e.target.id === "addAlt") {
+		info.addOption();
+	}
+
+	if (e.target.id === "saveWorkBtn") {
+		let newWorkTime = {
+			//QUESTION
+			user: options.value,
+			work: "Röstade för: " + work.value,
+			isPoll: 0,
+		};
+
+		// ÄNDRA
+		timeSheet.addTime(new Time(newWorkTime));
+
+		setTimeout(printTimes, 100);
+		console.log(timeSheet.timeSheet);
+		printTimes();
+		timeSheet.findPollBlocks();
+	}
+	if (e.target.id === "createBtn") {
+		info.collect();
+		console.log(timeSheet.timeSheet);
+
+		// SKAPA NY POLL
+		let newWorkTime = {
+			user: "Val om: " + adminUser.value,
+			work: "Alternativ: " + info.test.slice(1).join(" , "),
+			isPoll: 1,
+		};
+
+		// ÄNDRA
+		timeSheet.addTime(new Time(newWorkTime));
+
+		setTimeout(printTimes, 100);
+	}
+
+	if (e.target.id === "saveBtn") {
+		localStorage.setItem("timeSheet", JSON.stringify(timeSheet));
+		console.log("Sparat");
+	}
+
+
+	if (e.target.id === "checkBlockChain") {
+		console.log("checkBlockChain");
+		const timeSheetString = localStorage.getItem("timeSheet");
+		timeSheet = new Sheet(JSON.parse(timeSheetString));
+		displayBlockchain();
+		const element = document.getElementById('checkBlockChain'); 
+
+		element.removeEventListener('click', updateElementBorder);
+
+	}
+
+	if (e.target.id === "closeButton") {
+		document.getElementById("showtimeList").remove();
+	}
+
+	if (e.target.id === "validateButton") {
+		timeSheet.isChainValid();
+		console.log("isChainValid");
+		updateElementBorder()
+	}
+});
+
+window.addEventListener("unload", storeData);
+window.addEventListener("load", retrieveData);
 
 window.addEventListener("unload", storeNews);
- window.addEventListener("load", retrieveNews);
-
-// // Eventlistener för scrollfunktion för index.html
-// document.getElementById("scrollUp").addEventListener("click", () => scroll('up'));
-// document.getElementById("scrollDown").addEventListener("click", () => scroll('down'));
+window.addEventListener("load", retrieveNews);
 
 
+function createAdminButton() {
 
-const loginInput = localStorage.getItem("loginInput");
+	const url = window.location.href;
 
-// function checkAdmin () {
-//   if (loginInput === "admin") {
-//     const navLi = document.createElement("li");
-//     const adminBtn = document.createElement("a");
-//     adminBtn.innerHTML = "Admin";
-//     adminBtn.id = "adminBtn";
-//     navLi.appendChild(adminBtn);
-//     document.getElementById("dashboardNav").appendChild(navLi);
-//     console.log("admin");
-//     displayNews();
-//   } else{
-//     return;
-//   }
-// }
+	const params = new URLSearchParams(url.split("?")[1]);
+	console.log(params);
 
-// checkAdmin();
+	if (params.has("isAdmin")) {
+		const adminBtn = document.createElement("a");
+		adminBtn.innerHTML = "Admin";
+		adminBtn.className = "list-navbar";
+		adminBtn.id = "adminBtn";
+		const adminLink = document.createElement("li");
+		adminLink.appendChild(adminBtn);
 
-// loginUser(e);
+		document.getElementById("dashboardNav").appendChild(adminLink);
+	}
+}
 
-displayNews();
-console.log(timeSheet.timeSheet);
-console.log(timeSheet.timeSheet[1].data.user);
+window.addEventListener("load", createAdminButton);
+
+
+async function updateElementBorder() {
+	const elements = document.querySelectorAll('.timeBox'); 
+	const validateButton = document.getElementById("validateButton"); 
+  
+	elements.forEach(async element => {
+	  if (await timeSheet.isChainValid()) { 
+		element.style.backgroundColor = 'green';
+		validateButton.innerHTML = "Validerad"
+		validateButton.style = "background-color: " + "green";
+	  } else {
+		element.style.border = '2px solid red'; 
+	  }
+	});
+  }
