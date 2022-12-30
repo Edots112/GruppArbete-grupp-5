@@ -1,8 +1,8 @@
 const pictures = [
-    "url('/img/brf 1.jpg')",
-    "url('/img/brf 2.jpg')",
-    "url('/img/brf 3.jpg')",
-    "url('/img/jakobselfie.jpg')",
+    "url('./img/brf 1.jpg')",
+    "url('./img/brf 2.jpg')",
+    "url('./img/brf 3.jpg')",
+    "url('./img/jakobselfie.jpg')",
 ];
 
 let currentPicture = 0;
