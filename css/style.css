@@ -141,8 +141,8 @@ body {
 }
 
 .container-aboutus {
-	/* height: 100vh; */
 	background-color: transparent;
+	height: 100vh;
 }
 
 /* END welcome page index.html */
@@ -162,7 +162,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-	/* flex: 1; */
+
 }
 .aboutus-containerblock img {
 	border-radius: 50%;
@@ -176,14 +176,16 @@ body {
 
 .aboutus-upper {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	align-items: center;
+	width: 100%;
 }
 
 .aboutus-lower {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	align-items: center;
+	width: 100%;
 }
 
 .aboutus-user {
@@ -824,10 +826,9 @@ input[type="submit"]:hover {
 .blockchain {
 	margin: 20px;
 	text-align: center;
-
 }
 
-.blockchain{
+.blockchain {
 	overflow: scroll;
 }
 

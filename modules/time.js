@@ -25,7 +25,6 @@ class Time {
 				this.timeStamp +
 				this.prevHash +
 				this.nonce
-
 		);
 		//Krypterar msgInt8 med SHA-256 alg
 		let hashBuffer = await crypto.subtle.digest("SHA-256", msgInt8);
@@ -53,9 +52,6 @@ class Time {
 		}
 		this.hash = tryHash;
 	}
-
 }
 
 export default Time;
-
-
