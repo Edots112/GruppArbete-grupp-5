@@ -40,7 +40,7 @@ if (chain) {
 const userid = localStorage.getItem("loginInput");
 weatherAPI();
 addEventListener("DOMContentLoaded", function () {
-	if (window.location.pathname === "/dashboard.html") {
+	if (window.location.pathname === "/GruppArbete-grupp-5/dashboard.html") {
 		console.log("dashboard");
 		displayNews();
 		printTimes();
@@ -51,12 +51,12 @@ addEventListener("DOMContentLoaded", function () {
 });
 
 window.onload = function () {
-	if (window.location.pathname === "/userpage.html") {
+	if (window.location.pathname === "/GruppArbete-grupp-5/userpage.html") {
 		startChangeBackground(changeBackground);
 	}
 };
 
-if (window.location.pathname === "index.html") {
+if (window.location.pathname === "/GruppArbete-grupp-5/index.html") {
 	document
 		.getElementById("scrollUp")
 		.addEventListener("click", () => scroll("up"));
