@@ -88,7 +88,7 @@ body {
 
 /* START welcome page index.html */
 .welcome {
-	background-image: url(./img/welcomepage.png);
+	background-image: url(img/welcomepage.png);
 
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -134,7 +134,7 @@ body {
 }
 
 .container-contact {
-	background-image: url(./img/form-background.jpg);
+	background-image: url(img/form-background.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
