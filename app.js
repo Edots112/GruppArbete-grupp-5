@@ -1,5 +1,7 @@
 import { weatherAPI } from "./modules/fetch.js";
-import {changeBackground, startChangeBackground,
+import {
+	changeBackground,
+	startChangeBackground,
 } from "./modules/changeBackground.js";
 import { scroll } from "./modules/scroll.js";
 import { adminDashboard } from "./modules/admin.js";
@@ -37,14 +39,12 @@ if (chain) {
 
 const userid = localStorage.getItem("loginInput");
 weatherAPI();
-// displayArray();
 addEventListener("DOMContentLoaded", function () {
 	if (window.location.pathname === "/dashboard.html") {
 		console.log("dashboard");
 		displayNews();
 		printTimes();
 		timeSheet.findBlocksByUserId(userid);
-
 	} else {
 		console.log("not dashboard");
 	}
@@ -52,19 +52,20 @@ addEventListener("DOMContentLoaded", function () {
 
 window.onload = function () {
 	if (window.location.pathname === "/userpage.html") {
-		// Startar bakgrundsbild på userpage.html
 		startChangeBackground(changeBackground);
 	}
 };
 
 if (window.location.pathname === "/index.html") {
-	document.getElementById("scrollUp").addEventListener("click", () => scroll('up'));
-	document.getElementById("scrollDown").addEventListener("click", () => scroll('down'));
+	document
+		.getElementById("scrollUp")
+		.addEventListener("click", () => scroll("up"));
+	document
+		.getElementById("scrollDown")
+		.addEventListener("click", () => scroll("down"));
 }
 
-
 document.querySelector("body").addEventListener("click", function (e) {
-
 	if (e.target.id === "adminBtn") {
 		adminDashboard();
 		retrieveData();
@@ -122,7 +123,6 @@ document.querySelector("body").addEventListener("click", function (e) {
 		setTimeout(printTimes, 100);
 		console.log(timeSheet.timeSheet);
 		printTimes();
-		// timeSheet.findBlocksByUserId(userid)
 	}
 	if (e.target.id === "createBtn") {
 		info.collect();
@@ -146,16 +146,14 @@ document.querySelector("body").addEventListener("click", function (e) {
 		console.log("Sparat");
 	}
 
-
 	if (e.target.id === "checkBlockChain") {
-		console.log("checkBlockChain");
 		const timeSheetString = localStorage.getItem("timeSheet");
 		timeSheet = new Sheet(JSON.parse(timeSheetString));
+
 		displayBlockchain();
-		const element = document.getElementById('checkBlockChain'); 
 
-		element.removeEventListener('click', updateElementBorder);
-
+		const element = document.getElementById("checkBlockChain");
+		element.removeEventListener("click", updateElementBorder);
 	}
 
 	if (e.target.id === "closeButton") {
@@ -165,12 +163,11 @@ document.querySelector("body").addEventListener("click", function (e) {
 	if (e.target.id === "validateButton") {
 		timeSheet.isChainValid();
 		console.log("isChainValid");
-		updateElementBorder()
+		updateElementBorder();
 	}
 
 	if (e.target.id === "logoutButton") {
-			localStorage.removeItem("loginInput");
-
+		localStorage.removeItem("loginInput");
 	}
 });
 
@@ -180,9 +177,7 @@ window.addEventListener("load", retrieveData);
 window.addEventListener("unload", storeNews);
 window.addEventListener("load", retrieveNews);
 
-
 function createAdminButton() {
-
 	const url = window.location.href;
 
 	const params = new URLSearchParams(url.split("?")[1]);
@@ -202,18 +197,17 @@ function createAdminButton() {
 
 window.addEventListener("load", createAdminButton);
 
-
 async function updateElementBorder() {
-	const elements = document.querySelectorAll('.timeBox'); 
-	const validateButton = document.getElementById("validateButton"); 
-  
-	elements.forEach(async element => {
-	  if (await timeSheet.isChainValid()) { 
-		element.style.backgroundColor = 'green';
-		validateButton.innerHTML = "Validerad"
-		validateButton.style = "background-color: " + "green";
-	  } else {
-		element.style.border = '2px solid red'; 
-	  }
+	const elements = document.querySelectorAll(".timeBox");
+	const validateButton = document.getElementById("validateButton");
+
+	elements.forEach(async (element) => {
+		if (await timeSheet.isChainValid()) {
+			element.style.backgroundColor = "green";
+			validateButton.innerHTML = "Validerad";
+			validateButton.style = "background-color: " + "green";
+		} else {
+			element.style.border = "2px solid red";
+		}
 	});
-  }
+}

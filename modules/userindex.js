@@ -1,42 +1,45 @@
-export {loginUser, errorMsg, removeBorder, storeUserInput};
-import {adminDashboard} from './admin.js';
+export { loginUser, errorMsg, removeBorder, storeUserInput };
+import { adminDashboard } from "./admin.js";
 
-function loginUser (event) {
-    event.preventDefault();
+function loginUser(event) {
+	event.preventDefault();
 
-    fetch("residents.json")
-    .then((response) => response.json())
-    .then((data) => checkUser(data));    
+	fetch("residents.json")
+		.then((response) => response.json())
+		.then((data) => checkUser(data));
 
-    async function checkUser(user) {
-        const loginInput = document.getElementById("loginTextInput").value;
-        const passwordInput = document.getElementById("passwordInput").value;
-		
+	async function checkUser(user) {
+		const loginInput = document.getElementById("loginTextInput").value;
+		const passwordInput = document.getElementById("passwordInput").value;
 
-        for (const userInlog in user) {
-            let userlogin = user[userInlog].username;              
-            let userPassword = user[userInlog].password;
+		for (const userInlog in user) {
+			let userlogin = user[userInlog].username;
+			let userPassword = user[userInlog].password;
 			let isAdmin = user[userInlog].admin;
 
-            if (userlogin === loginInput && userPassword === passwordInput) {
-                storeUserInput();
-                window.location.href = "dashboard.html";
+			if (userlogin === loginInput && userPassword === passwordInput) {
+				storeUserInput();
+				window.location.href = "dashboard.html";
 				document.getElementById("loginForm").style.display = "none";
 				console.log("user");
 			}
-			 else if (isAdmin)  {
+			if (
+				isAdmin === true &&
+				userlogin === loginInput &&
+				userPassword === passwordInput
+			) {
 				window.location.href = `dashboard.html?isAdmin=${isAdmin}`;
 				storeUserInput();
 				console.log("admin");
-			  } else {
+			} else {
 				errorMsg();
-            }
-        }
-    }
+				console.log("error");
+			}
+		}
+	}
 }
 
 function errorMsg() {
-	
 	document.getElementById("loginTextInput").style.border = "2px solid red";
 	document.getElementById("passwordInput").style.border = "2px solid red";
 	document.getElementById("loginForm").style.border = "2px solid red";
@@ -53,12 +56,7 @@ function removeBorder() {
 	document.getElementById("errorMsgLogin").innerHTML = "";
 }
 
-
-
-
 function storeUserInput() {
 	const loginInput = document.getElementById("loginTextInput").value;
 	localStorage.setItem("loginInput", loginInput);
 }
-
-
