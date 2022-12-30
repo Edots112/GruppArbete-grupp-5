@@ -18,7 +18,7 @@ fetch('https://api.weatherapi.com/v1/forecast.json?key=e5e5e62cb4c74836a5a222404
 		});
 
 		setInterval(function() {
-			fetch('http://api.weatherapi.com/v1/forecast.json?key=e5e5e62cb4c74836a5a222404221812&q=Vaxjo&days=10&aqi=no&alerts=no')
+			fetch('https://api.weatherapi.com/v1/forecast.json?key=e5e5e62cb4c74836a5a222404221812&q=Vaxjo&days=10&aqi=no&alerts=no')
 			.then((response) => response.json())
 			.then((response) => {
 				console.log(response);
