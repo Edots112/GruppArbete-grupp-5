@@ -1,4 +1,6 @@
 import { weatherAPI } from "../modules/fetch.js";
+import {changeBackground, startChangeBackground,
+} from "../modules/changeBackground.js";
 import { scroll } from "../modules/scroll.js";
 import { adminDashboard } from "../modules/admin.js";
 import {
