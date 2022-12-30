@@ -1,7 +1,6 @@
-export function weatherAPI() {
-	fetch(
-		"https://api.weatherapi.com/v1/forecast.json?key=e5e5e62cb4c74836a5a222404221812&q=Vaxjo&days=10&aqi=no&alerts=no"
-	)
+
+export function weatherAPI(){
+fetch('https://api.weatherapi.com/v1/forecast.json?key=e5e5e62cb4c74836a5a222404221812&q=Vaxjo&days=10&aqi=no&alerts=no')
 		.then((response) => response.json())
 		.then((response) => {
 			console.log(response);
@@ -27,10 +26,8 @@ export function weatherAPI() {
 				response.forecast.forecastday[2].day.avgtemp_c + "°C";
 		});
 
-	setInterval(function () {
-		fetch(
-			"http://api.weatherapi.com/v1/forecast.json?key=e5e5e62cb4c74836a5a222404221812&q=Vaxjo&days=10&aqi=no&alerts=no"
-		)
+		setInterval(function() {
+			fetch('https://api.weatherapi.com/v1/forecast.json?key=e5e5e62cb4c74836a5a222404221812&q=Vaxjo&days=10&aqi=no&alerts=no')
 			.then((response) => response.json())
 			.then((response) => {
 				console.log(response);
