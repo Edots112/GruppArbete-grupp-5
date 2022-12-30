@@ -38,15 +38,15 @@ if (chain) {
 }
 
 const userid = localStorage.getItem("loginInput");
-
-
+weatherAPI();
+// displayArray();
 addEventListener("DOMContentLoaded", function () {
 	if (window.location.pathname === "/dashboard.html") {
 		console.log("dashboard");
 		displayNews();
 		printTimes();
 		timeSheet.findBlocksByUserId(userid);
-		weatherAPI();
+
 	} else {
 		console.log("not dashboard");
 	}
@@ -56,7 +56,6 @@ window.onload = function () {
 	if (window.location.pathname === "/userpage.html") {
 		// Startar bakgrundsbild på userpage.html
 		startChangeBackground(changeBackground);
-		weatherAPI();
 	}
 };
 
@@ -71,8 +70,8 @@ document.querySelector("body").addEventListener("click", function (e) {
 	if (e.target.id === "adminBtn") {
 		adminDashboard();
 		retrieveData();
-		displayArray();
 		timeSheet.findPollBlocks();
+		displayArray();
 	}
 
 	if (e.target.id === "sgstBtn") {
@@ -125,7 +124,7 @@ document.querySelector("body").addEventListener("click", function (e) {
 		setTimeout(printTimes, 100);
 		console.log(timeSheet.timeSheet);
 		printTimes();
-		timeSheet.findPollBlocks();
+		// timeSheet.findBlocksByUserId(userid)
 	}
 	if (e.target.id === "createBtn") {
 		info.collect();
@@ -169,6 +168,11 @@ document.querySelector("body").addEventListener("click", function (e) {
 		timeSheet.isChainValid();
 		console.log("isChainValid");
 		updateElementBorder()
+	}
+
+	if (e.target.id === "logoutButton") {
+			localStorage.removeItem("loginInput");
+
 	}
 });
 

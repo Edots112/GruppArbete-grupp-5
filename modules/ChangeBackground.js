@@ -7,7 +7,7 @@ const pictures = [
 
 let currentPicture = 0;
 
-export function changeBackground() {
+export  async function changeBackground() {
     
 	currentPicture = (currentPicture + 1) % pictures.length;
 	console.log(currentPicture);
@@ -34,6 +34,7 @@ export function changeBackground() {
 
 export function startChangeBackground(changeBackground){
   if (document.getElementById("userpage")) {
+    changeBackground();
       setInterval(changeBackground, 5000);
   } else {
       clearInterval(changeBackground);

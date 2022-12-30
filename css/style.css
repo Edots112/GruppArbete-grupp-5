@@ -733,7 +733,7 @@ input[type="submit"]:hover {
 }
 
 .userpage {
-	background-image: url(./img/brf\ 1.jpg);
+	background-image: url();
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -928,7 +928,7 @@ article label {
 	padding: 50px 25px;
 	position: absolute;
 	top: 50%;
-	left: 40%;
+	left: 50%;
 	transform: translate(-50%, -50%);
 	border: 1px;
 	overflow: scroll;
