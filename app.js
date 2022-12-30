@@ -1,28 +1,28 @@
-import { weatherAPI } from "./modules/fetch.js";
+import { weatherAPI } from "../modules/fetch.js";
 import {
 	changeBackground,
 	startChangeBackground,
-} from "./modules/changeBackground.js";
-import { scroll } from "./modules/scroll.js";
-import { adminDashboard } from "./modules/admin.js";
+} from "../modules/changeBackground.js";
+import { scroll } from "../modules/scroll.js";
+import { adminDashboard } from "../modules/admin.js";
 import {
 	storeData,
 	retrieveData,
 	displayArray,
 	updateElement,
-} from "./modules/PushSuggestion.js";
+} from "../modules/PushSuggestion.js";
 import {
 	updateNews,
 	displayNews,
 	retrieveNews,
 	storeNews,
-} from "./modules/PushNews.js";
-import { loginUser, removeBorder } from "./modules/userindex.js";
-import { getArray } from "./modules/getArray.js";
-import Sheet from "./modules/sheet.js";
-import Time from "./modules/time.js";
-import { printTimes } from "./modules/printTimes.js";
-import { displayBlockchain } from "./modules/showBlockchain.js";
+} from "../modules/PushNews.js";
+import { loginUser, removeBorder } from "../modules/userindex.js";
+import { getArray } from "../modules/getArray.js";
+import Sheet from "../modules/sheet.js";
+import Time from "../modules/time.js";
+import { printTimes } from "../modules/printTimes.js";
+import { displayBlockchain } from "../modules/showBlockchain.js";
 
 var count = 2;
 let alternativ = [];
