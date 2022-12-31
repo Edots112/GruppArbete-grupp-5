@@ -9,6 +9,7 @@ function displayArray() {
 		let suggestionArray = [{ id: 0, suggestion: "Test", date: new Date() }];
 	}
 	let counter = counter || 0;
+	
 	let element = document.getElementById("fromSuggestions");
 	let getDate = document.getElementById("dateTime");
 	let id = document.getElementById("id");
