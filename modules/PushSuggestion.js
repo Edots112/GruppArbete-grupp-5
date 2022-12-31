@@ -8,10 +8,7 @@ function displayArray() {
 	if (!suggestionArray) {
 		let suggestionArray = [{ id: 0, suggestion: "Test", date: new Date() }];
 	}
-	if (!counter) {
-		console.log("counter", counter);
-		let counter = 0;
-	}
+	let counter = counter || 0;
 	let element = document.getElementById("fromSuggestions");
 	let getDate = document.getElementById("dateTime");
 	let id = document.getElementById("id");
