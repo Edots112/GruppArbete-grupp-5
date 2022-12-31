@@ -5,10 +5,12 @@ let getDate = new Date();
 
 
 function displayArray() {
+	if (!suggestionArray) {
+		let suggestionArray = [{ id: 0, suggestion: "Test", date: new Date() }];
+	}
 	let element = document.getElementById("fromSuggestions");
 	let getDate = document.getElementById("dateTime");
 	let id = document.getElementById("id");
-	let counter = 0;
 
 	element.innerHTML = suggestionArray[counter].suggestion;
 	getDate.innerHTML = suggestionArray[counter].date;
