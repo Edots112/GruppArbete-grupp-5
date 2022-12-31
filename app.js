@@ -147,7 +147,7 @@ document.querySelector("body").addEventListener("click", function (e) {
 	}
 
 	if (e.target.id === "checkBlockChain") {
-		const timeSheetString = localStorage.getItem("timeSheet");
+		const timeSheetString = localStorage.getItem("timeSheet") || [];
 		timeSheet = new Sheet(JSON.parse(timeSheetString));
 
 		displayBlockchain();
