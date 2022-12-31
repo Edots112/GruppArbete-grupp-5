@@ -2,12 +2,13 @@ export { updateElement, displayArray, storeData, retrieveData };
 
 let suggestionArray = [{ id: 0, suggestion: "Test", date: new Date() }];
 let getDate = new Date();
-let counter = 0;
+
 
 function displayArray() {
 	let element = document.getElementById("fromSuggestions");
 	let getDate = document.getElementById("dateTime");
 	let id = document.getElementById("id");
+	let counter = 0;
 
 	element.innerHTML = suggestionArray[counter].suggestion;
 	getDate.innerHTML = suggestionArray[counter].date;
