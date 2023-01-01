@@ -40,7 +40,7 @@ if (chain) {
 const userid = localStorage.getItem("loginInput");
 weatherAPI();
 addEventListener("DOMContentLoaded", function () {
-	if (window.location.pathname === "./dashboard.html") {
+	if (window.location.pathname === "/dashboard.html") {
 		console.log("dashboard");
 		displayNews();
 		printTimes();
@@ -56,13 +56,10 @@ window.onload = function () {
 	}
 };
 
-if (window.location.pathname === "./index.html") {
-	document
-		.getElementById("scrollUp")
-		.addEventListener("click", () => scroll("up"));
-	document
-		.getElementById("scrollDown")
-		.addEventListener("click", () => scroll("down"));
+if (window.location.pathname === "/index.html") {
+	document.getElementById("scrollUp").addEventListener("click", () => scroll("up"));
+	document.getElementById("scrollDown").addEventListener("click", () => scroll("down"));
+	
 }
 
 document.querySelector("body").addEventListener("click", function (e) {
